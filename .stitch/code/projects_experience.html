@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PROJECTS &amp; EXPERIENCE | SYSTEM_ERR_DEV</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Inter:wght@400;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#dee0ff",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#bbc3ff",
+                        "charcoal": "#1A1A1A",
+                        "on-secondary-container": "#556a00",
+                        "on-surface-variant": "#444656",
+                        "tertiary": "#922a00",
+                        "on-tertiary-container": "#ffdfd5",
+                        "secondary": "#516600",
+                        "pure-white": "#FFFFFF",
+                        "surface-container-high": "#e8e8e8",
+                        "on-tertiary-fixed-variant": "#842500",
+                        "surface-dim": "#dadada",
+                        "background": "#f9f9f9",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#747688",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#303030",
+                        "tertiary-fixed": "#ffdbd0",
+                        "on-secondary-fixed-variant": "#3d4d00",
+                        "lime-green": "#D4FF3F",
+                        "inverse-primary": "#bbc3ff",
+                        "secondary-fixed": "#c8f232",
+                        "on-primary-fixed": "#000e5e",
+                        "electric-blue": "#304FFE",
+                        "surface-bright": "#f9f9f9",
+                        "on-tertiary-fixed": "#3a0b00",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#c5f02e",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#eeeeee",
+                        "surface": "#f9f9f9",
+                        "error": "#ba1a1a",
+                        "primary-container": "#304ffe",
+                        "on-primary-container": "#e2e3ff",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-tint": "#2345f6",
+                        "surface-variant": "#e2e2e2",
+                        "secondary-fixed-dim": "#add500",
+                        "on-primary-fixed-variant": "#002bcf",
+                        "tertiary-fixed-dim": "#ffb59e",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#171e00",
+                        "on-background": "#1b1b1b",
+                        "primary": "#0030e4",
+                        "tertiary-container": "#bb3800",
+                        "on-surface": "#1b1b1b",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container-low": "#f3f3f3",
+                        "outline-variant": "#c4c5d9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "section-gap": "120px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "label-mono": ["JetBrains Mono"],
+                        "display-lg": ["Syne"],
+                        "headline-lg": ["Syne"],
+                        "label-caps": ["Inter"],
+                        "display-lg-mobile": ["Syne"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Syne"]
+                    },
+                    "fontSize": {
+                        "label-mono": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "display-lg": ["80px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "display-lg-mobile": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ortho-float {
+            box-shadow: 12px 12px 0px 0px rgba(26,26,26,1);
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .ortho-float:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 16px 16px 0px 0px rgba(48, 79, 254, 1);
+        }
+        .sticker-rotate { transform: rotate(-2deg); }
+        .sticker-rotate-alt { transform: rotate(1.5deg); }
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #304FFE;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s;
+        }
+        ::selection {
+            background-color: #D4FF3F;
+            color: #1A1A1A;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-pure-white text-charcoal selection:bg-lime-green">
+<!-- Top Navigation -->
+<header class="bg-background dark:bg-charcoal text-electric-blue dark:text-inverse-primary font-headline-md text-headline-md tracking-tighter w-full top-0 sticky border-b-2 border-charcoal dark:border-outline z-50 flex justify-between items-center px-margin-desktop py-base w-full">
+<div class="font-display-lg text-headline-md text-charcoal dark:text-pure-white uppercase">PORTFOLIO</div>
+<nav class="hidden md:flex gap-gutter">
+<a class="text-charcoal dark:text-pure-white hover:text-electric-blue transition-colors duration-200" href="#">Index</a>
+<a class="text-electric-blue font-bold hover:text-electric-blue transition-colors duration-200" href="#">Projects</a>
+<a class="text-charcoal dark:text-pure-white hover:text-electric-blue transition-colors duration-200" href="#">Archive</a>
+<a class="text-charcoal dark:text-pure-white hover:text-electric-blue transition-colors duration-200" href="#">About</a>
+</nav>
+<button class="bg-electric-blue text-pure-white px-gutter py-base font-label-caps active:translate-y-0.5 transition-transform">HIRE ME</button>
+</header>
+<!-- Side Navigation Drawer (Hidden on mobile) -->
+<aside class="fixed left-0 top-0 h-full z-[100] flex flex-col p-8 bg-pure-white dark:bg-charcoal h-screen w-80 border-r-2 border-charcoal dark:border-outline shadow-[8px_8px_0px_0px_rgba(26,26,26,1)] hidden lg:flex">
+<div class="font-display-lg text-headline-md text-charcoal mb-12 uppercase">NAVIGATION</div>
+<ul class="space-y-6">
+<li><a class="font-display-lg text-headline-lg-mobile text-charcoal hover:pl-4 transition-all duration-300 hover:text-electric-blue block" href="#">Index</a></li>
+<li><a class="font-display-lg text-headline-lg-mobile text-electric-blue italic underline decoration-lime-green decoration-4 hover:pl-4 transition-all duration-300 block" href="#">Projects</a></li>
+<li><a class="font-display-lg text-headline-lg-mobile text-charcoal hover:pl-4 transition-all duration-300 hover:text-electric-blue block" href="#">Archive</a></li>
+<li><a class="font-display-lg text-headline-lg-mobile text-charcoal hover:pl-4 transition-all duration-300 hover:text-electric-blue block" href="#">Lab</a></li>
+<li><a class="font-display-lg text-headline-lg-mobile text-charcoal hover:pl-4 transition-all duration-300 hover:text-electric-blue block" href="#">About</a></li>
+</ul>
+</aside>
+<main class="lg:ml-80 min-h-screen">
+<!-- Hero Section -->
+<section class="px-margin-desktop py-section-gap">
+<h1 class="font-display-lg text-display-lg uppercase max-w-4xl">
+                Creative <span class="text-electric-blue">Systems</span> &amp; Digital Narrative.
+            </h1>
+<p class="font-body-lg text-body-lg mt-base max-w-xl opacity-70">
+                Bridging the gap between brutalist architecture and fluid digital experiences. Focused on Neo-Cyber Editorial design for the next generation of web infrastructure.
+            </p>
+</section>
+<!-- Projects Bento Grid -->
+<section class="px-margin-desktop mb-section-gap" id="projects">
+<div class="flex items-end justify-between mb-gutter">
+<h2 class="font-headline-lg text-headline-lg uppercase underline decoration-lime-green decoration-8">Selected Works</h2>
+<span class="font-label-mono text-label-mono opacity-50">[VOL_01_2024]</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Project 1: Cyber-Reality Systems -->
+<div class="md:col-span-8 group relative">
+<div class="ortho-float bg-surface-container overflow-hidden border-2 border-charcoal">
+<img class="w-full h-[500px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A high-contrast digital art showcase featuring complex 3D wireframe structures of a futuristic city floating in a void. The color palette is dominated by deep blacks and pure whites with sharp neon electric blue highlights. The aesthetic is clean, technical, and reminiscent of high-end editorial graphic design. Lighting is dramatic and directional, casting hard orthographic shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDReSlLMuTe3PvfheD5BhB5b8MJIxNVxP1v-_i-6pu9LAdYqJYtVFaf1z7O4Jwv89U7yrodlYdPyTacl-Is9ROUDZO9hX_Hafuy-psSaId3Pu5Kgx0MTrOSR2hCTjNr_km2DtLwcG3xAZxhWHAZ1tbo5bFky0JFVH2PbiLeKYbTGXNjjDfMzQ3kIijsm5-7JuiBu5gFYW2reA6iOg87wmoi7L7bSc2eOdISXMRwyTnFZdlEVMUbxOHeXXBaun0aY5AwiuMGP29qC13X"/>
+<div class="p-gutter flex flex-col items-start bg-pure-white">
+<span class="sticker-rotate bg-lime-green text-charcoal px-4 py-1 font-label-mono text-label-mono mb-base border border-charcoal">VR/AR INFRASTRUCTURE</span>
+<h3 class="font-headline-md text-headline-md uppercase">Cyber-Reality Systems</h3>
+</div>
+</div>
+</div>
+<!-- Project 2: Kinetic Interface Lab -->
+<div class="md:col-span-4 group">
+<div class="ortho-float bg-surface-container overflow-hidden border-2 border-charcoal h-full flex flex-col">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A macro photograph of a retro-futuristic mechanical keyboard with custom transparent keycaps glowing with soft lime green light. The background is a minimalist tech workspace with high-key lighting. The overall mood is precise and experimental, focusing on the tactile nature of high-end hardware design. Monochrome surroundings emphasize the glowing green accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD77g7eLg-rAhPyLEjnrswNJSbkq2TWZbSck04trD3E2b9uxip923K_uZr4HVGaH-8foUXGrd9UFluxe2jaFQrKBZQaESbbORAfg3C3AewKgYzN6awqxm3LpyrxFckjeVYJvLpOop7O3FRg-NqXvr50khTAOyqBOcAovKlBIN2sxmla0xVZAhlYpjd7spuivnM-WZQx3MvTDQ3Aqr3azlXYl9m5CGVnsPi4XKurOpEzdYvnjGm4YakeU67cThsmL8ylH25Qccf4ozLF"/>
+<div class="p-gutter bg-pure-white border-t-2 border-charcoal">
+<span class="sticker-rotate-alt bg-electric-blue text-pure-white px-4 py-1 font-label-mono text-label-mono mb-base inline-block border border-charcoal">HCI RESEARCH</span>
+<h3 class="font-headline-md text-headline-md uppercase">Kinetic Interface Lab</h3>
+</div>
+</div>
+</div>
+<!-- Project 3: Neo-Dash -->
+<div class="md:col-span-12 group">
+<div class="ortho-float bg-charcoal text-pure-white overflow-hidden border-2 border-charcoal flex flex-col md:flex-row">
+<div class="p-margin-desktop flex-1 flex flex-col justify-center">
+<span class="bg-lime-green text-charcoal px-4 py-1 font-label-mono text-label-mono mb-gutter w-fit border border-charcoal">DASHBOARD UI</span>
+<h3 class="font-display-lg text-headline-lg uppercase mb-base">Neo-Dash</h3>
+<p class="font-body-md text-body-md opacity-80 mb-gutter max-w-md">
+                                A high-performance telemetry dashboard for autonomous transport units, utilizing orthographic projection for data visualization.
+                            </p>
+<button class="border-2 border-pure-white px-8 py-3 w-fit font-label-caps hover:bg-pure-white hover:text-charcoal transition-all">VIEW CASE STUDY</button>
+</div>
+<div class="flex-1 min-h-[300px] relative overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A minimalist digital dashboard display showing abstract data visualizations with sharp, thin lines and geometric shapes. The UI uses a strictly monochrome theme with intense electric blue highlights for critical data points. The layout is asymmetrical and futuristic, set against a pristine light-mode background that gives it a professional editorial look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFiQrfSaeEuOiTZ-eQFpUPvrGdxG0H5Qm9FlnwPCGvLetCI0VsfHE9GXujQiZWCJZFsioXY30gBH8pBRc_UmpPzqbvCL4WySZZwfp_XmtzEmP4Eu9oty6RDPOOn3IImQuxrWhfE2uyrjUAzDBbNdYOlkf-zXrsEtCZYLCO3JfsFOJK8O5McZCIGcOkwj08uIW3zpMmsxFHTnhcxHE94SAUlOjWgnnXHzIxpe-Mmq7OZ9PtW7MJxd2yzA9xSbEPCoEJxvquggm4dg64"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience/Education Section -->
+<section class="px-margin-desktop mb-section-gap" id="experience">
+<div class="flex flex-col md:flex-row gap-gutter">
+<div class="md:w-1/3">
+<h2 class="font-display-lg text-headline-lg uppercase sticky top-32">Experience <br/>&amp; Growth</h2>
+</div>
+<div class="md:w-2/3 space-y-gutter relative">
+<!-- Timeline Line -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-charcoal opacity-10 ml-4 md:ml-0"></div>
+<!-- Experience Item 1 -->
+<div class="relative pl-12 md:pl-16">
+<div class="absolute left-1.5 md:-left-2.5 top-0 w-6 h-6 bg-electric-blue border-4 border-pure-white rounded-full z-10"></div>
+<div class="ortho-float bg-pure-white border-2 border-charcoal p-gutter sticker-rotate-alt">
+<div class="flex justify-between items-start mb-base">
+<span class="font-label-mono text-label-mono text-electric-blue">2022 — PRESENT</span>
+<span class="material-symbols-outlined">terminal</span>
+</div>
+<h4 class="font-headline-md text-headline-md uppercase">Lead Interface Designer</h4>
+<p class="font-label-caps text-label-caps mb-gutter opacity-60">SPECTRA_CORE INDUSTRIES</p>
+<p class="font-body-md text-body-md">Architecting design systems for sub-surface logistics and autonomous monitoring. Leading a team of 12 creative developers.</p>
+</div>
+</div>
+<!-- Experience Item 2 -->
+<div class="relative pl-12 md:pl-16">
+<div class="absolute left-1.5 md:-left-2.5 top-0 w-6 h-6 bg-lime-green border-4 border-pure-white rounded-full z-10"></div>
+<div class="ortho-float bg-pure-white border-2 border-charcoal p-gutter sticker-rotate">
+<div class="flex justify-between items-start mb-base">
+<span class="font-label-mono text-label-mono text-electric-blue">2020 — 2022</span>
+<span class="material-symbols-outlined">architecture</span>
+</div>
+<h4 class="font-headline-md text-headline-md uppercase">Senior Creative Developer</h4>
+<p class="font-label-caps text-label-caps mb-gutter opacity-60">VOID_ARCHIVE SYSTEMS</p>
+<p class="font-body-md text-body-md">Developed generative branding tools and interactive editorial platforms for high-fashion clients.</p>
+</div>
+</div>
+<!-- Experience Item 3 -->
+<div class="relative pl-12 md:pl-16">
+<div class="absolute left-1.5 md:-left-2.5 top-0 w-6 h-6 bg-charcoal border-4 border-pure-white rounded-full z-10"></div>
+<div class="ortho-float bg-pure-white border-2 border-charcoal p-gutter">
+<div class="flex justify-between items-start mb-base">
+<span class="font-label-mono text-label-mono text-electric-blue">2018 — 2020</span>
+<span class="material-symbols-outlined">school</span>
+</div>
+<h4 class="font-headline-md text-headline-md uppercase">MFA in Computational Arts</h4>
+<p class="font-label-caps text-label-caps mb-gutter opacity-60">CYBER_UI INSTITUTE</p>
+<p class="font-body-md text-body-md">Researched the intersection of brutalist architecture and responsive digital typography systems.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact CTA / Floating Signboard -->
+<section class="px-margin-desktop pb-section-gap flex justify-center">
+<div class="ortho-float bg-lime-green p-12 text-center border-2 border-charcoal max-w-2xl transform hover:scale-105 transition-transform">
+<h3 class="font-display-lg text-headline-lg uppercase mb-gutter">Available for Collaboration</h3>
+<p class="font-body-lg text-body-lg mb-gutter">Currently taking on high-end creative projects for Q3 2024. Let's build the future of the web.</p>
+<div class="flex flex-wrap justify-center gap-gutter">
+<button class="bg-charcoal text-pure-white px-gutter py-base font-label-caps hover:bg-electric-blue transition-colors">INITIATE CONTACT</button>
+<button class="border-2 border-charcoal px-gutter py-base font-label-caps hover:bg-charcoal hover:text-pure-white transition-all">VIEW CV.PDF</button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-charcoal dark:bg-surface-container-lowest text-lime-green dark:text-secondary font-label-mono text-label-mono w-full px-margin-desktop py-gutter flex flex-col md:flex-row justify-between items-center border-t-2 border-charcoal bg-charcoal">
+<div class="font-label-mono text-label-mono text-lime-green uppercase">©2024 SYSTEM_ERR_DEV. ALL RIGHTS RESERVED.</div>
+<div class="flex gap-gutter mt-base md:mt-0">
+<a class="text-pure-white opacity-60 hover:opacity-100 hover:text-lime-green transition-opacity hover:tracking-widest transition-all duration-300" href="#">Terminal</a>
+<a class="text-pure-white opacity-60 hover:opacity-100 hover:text-lime-green transition-opacity hover:tracking-widest transition-all duration-300" href="#">Source</a>
+<a class="text-pure-white opacity-60 hover:opacity-100 hover:text-lime-green transition-opacity hover:tracking-widest transition-all duration-300" href="#">Connect</a>
+</div>
+</footer>
+</main>
+<div class="custom-cursor hidden md:block" id="cursor"></div>
+<script>
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX - 10 + 'px';
+            cursor.style.top = e.clientY - 10 + 'px';
+        });
+
+        // Simple scroll reveal for cards
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.ortho-float').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body></html>

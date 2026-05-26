@@ -1,0 +1,1565 @@
+<!-- About & Skills Section -->
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Inter:wght@400;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#dee0ff",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#bbc3ff",
+                        "charcoal": "#1A1A1A",
+                        "on-secondary-container": "#556a00",
+                        "on-surface-variant": "#444656",
+                        "tertiary": "#922a00",
+                        "on-tertiary-container": "#ffdfd5",
+                        "secondary": "#516600",
+                        "pure-white": "#FFFFFF",
+                        "surface-container-high": "#e8e8e8",
+                        "on-tertiary-fixed-variant": "#842500",
+                        "surface-dim": "#dadada",
+                        "background": "#f9f9f9",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#747688",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#303030",
+                        "tertiary-fixed": "#ffdbd0",
+                        "on-secondary-fixed-variant": "#3d4d00",
+                        "lime-green": "#D4FF3F",
+                        "inverse-primary": "#bbc3ff",
+                        "secondary-fixed": "#c8f232",
+                        "on-primary-fixed": "#000e5e",
+                        "electric-blue": "#304FFE",
+                        "surface-bright": "#f9f9f9",
+                        "on-tertiary-fixed": "#3a0b00",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#c5f02e",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#eeeeee",
+                        "surface": "#f9f9f9",
+                        "error": "#ba1a1a",
+                        "primary-container": "#304ffe",
+                        "on-primary-container": "#e2e3ff",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-tint": "#2345f6",
+                        "surface-variant": "#e2e2e2",
+                        "secondary-fixed-dim": "#add500",
+                        "on-primary-fixed-variant": "#002bcf",
+                        "tertiary-fixed-dim": "#ffb59e",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#171e00",
+                        "on-background": "#1b1b1b",
+                        "primary": "#0030e4",
+                        "tertiary-container": "#bb3800",
+                        "on-surface": "#1b1b1b",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container-low": "#f3f3f3",
+                        "outline-variant": "#c4c5d9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "section-gap": "120px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "label-mono": ["JetBrains Mono"],
+                        "display-lg": ["Syne"],
+                        "headline-lg": ["Syne"],
+                        "label-caps": ["Inter"],
+                        "display-lg-mobile": ["Syne"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Syne"]
+                    },
+                    "fontSize": {
+                        "label-mono": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg": ["80px", { "lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .ortho-shadow {
+            box-shadow: 12px 12px 0px 0px rgba(26, 26, 26, 1);
+        }
+
+        .ortho-shadow-small {
+            box-shadow: 6px 6px 0px 0px rgba(26, 26, 26, 1);
+        }
+
+        .signboard-float {
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .signboard-float:hover {
+            transform: translateY(-8px) rotate(-1deg);
+        }
+
+        .lanyard-cable {
+            width: 4px;
+            background: repeating-linear-gradient(0deg,
+                    #1A1A1A,
+                    #1A1A1A 10px,
+                    #304FFE 10px,
+                    #304FFE 20px);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background selection:bg-lime-green selection:text-charcoal overflow-x-hidden">
+    <!-- Top Navigation -->
+    <header
+        class="bg-background dark:bg-charcoal w-full top-0 sticky border-b-2 border-charcoal dark:border-outline z-50 flex justify-between items-center px-margin-desktop py-base">
+        <div class="font-display-lg text-headline-md text-charcoal dark:text-pure-white uppercase">PORTFOLIO</div>
+        <nav class="hidden md:flex gap-gutter items-center">
+            <a class="text-charcoal dark:text-pure-white hover:text-electric-blue transition-colors duration-200 font-label-caps text-label-caps"
+                href="#">INDEX</a>
+            <a class="text-electric-blue font-bold hover:text-electric-blue transition-colors duration-200 font-label-caps text-label-caps"
+                href="#">ABOUT</a>
+            <a class="text-charcoal dark:text-pure-white hover:text-electric-blue transition-colors duration-200 font-label-caps text-label-caps"
+                href="#">PROJECTS</a>
+            <button
+                class="bg-electric-blue text-pure-white px-gutter py-base font-label-caps text-label-caps hover:bg-charcoal transition-all active:translate-y-0.5">HIRE
+                ME</button>
+        </nav>
+        <div class="md:hidden">
+            <span class="material-symbols-outlined text-charcoal">menu</span>
+        </div>
+    </header>
+    <!-- Sidebar Navigation -->
+    <aside
+        class="fixed left-0 top-0 h-full z-[100] flex flex-col p-8 bg-pure-white dark:bg-charcoal h-screen w-80 border-r-2 border-charcoal shadow-[8px_8px_0px_0px_rgba(26,26,26,1)] hidden lg:flex">
+        <div class="mb-section-gap">
+            <div class="font-display-lg text-headline-md text-charcoal uppercase">NAVIGATION</div>
+        </div>
+        <ul class="space-y-gutter">
+            <li><a class="font-display-lg text-headline-lg-mobile text-charcoal hover:pl-4 transition-all duration-300 hover:text-electric-blue"
+                    href="#">Index</a></li>
+            <li><a class="font-display-lg text-headline-lg-mobile text-electric-blue italic underline decoration-lime-green decoration-4 hover:pl-4 transition-all duration-300"
+                    href="#">About</a></li>
+            <li><a class="font-display-lg text-headline-lg-mobile text-charcoal hover:pl-4 transition-all duration-300 hover:text-electric-blue"
+                    href="#">Projects</a></li>
+            <li><a class="font-display-lg text-headline-lg-mobile text-charcoal hover:pl-4 transition-all duration-300 hover:text-electric-blue"
+                    href="#">Archive</a></li>
+            <li><a class="font-display-lg text-headline-lg-mobile text-charcoal hover:pl-4 transition-all duration-300 hover:text-electric-blue"
+                    href="#">Lab</a></li>
+        </ul>
+    </aside>
+    <main class="lg:ml-80">
+        <!-- About Section -->
+        <section class="min-h-screen px-margin-mobile md:px-margin-desktop py-section-gap max-w-7xl">
+            <div class="flex flex-col md:grid md:grid-cols-12 gap-gutter relative">
+                <!-- Headline Column -->
+                <div class="col-span-12 md:col-span-8 mb-gutter md:mb-0">
+                    <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg leading-none mb-gutter">
+                        IDENTITY <br />
+                        <span class="text-electric-blue">STUDIO_01</span>
+                    </h1>
+                    <div class="p-8 border-2 border-charcoal bg-pure-white relative z-10 ortho-shadow">
+                        <span
+                            class="font-label-caps text-label-caps text-lime-green bg-charcoal px-2 py-1 mb-4 inline-block">MANIFESTO</span>
+                        <p class="font-body-lg text-body-lg leading-relaxed text-charcoal">
+                            Practicing <span class="font-bold underline decoration-electric-blue">Beyond the
+                                Grid</span>. I believe in the tension between technical precision and chaotic
+                            expression. Digital craftsmanship isn't about following patterns; it's about breaking them
+                            with purpose. My work sits at the intersection of Neo-Cyber aesthetics and high-end
+                            editorial rigor.
+                        </p>
+                    </div>
+                </div>
+                <!-- Profile/Lanyard Column -->
+                <div class="col-span-12 md:col-span-4 flex flex-col items-center justify-start pt-base">
+                    <!-- Lanyard Hook -->
+                    <div class="lanyard-cable h-32 w-1 mb-0 relative">
+                        <div
+                            class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-6 h-6 border-4 border-charcoal rounded-full bg-surface-container">
+                        </div>
+                    </div>
+                    <!-- ID Card Card -->
+                    <div
+                        class="w-full max-w-sm bg-pure-white border-2 border-charcoal p-6 ortho-shadow relative rotate-3 signboard-float">
+                        <div class="flex justify-between items-start mb-base">
+                            <span class="font-label-mono text-label-mono text-charcoal">ACCESS_GRNTD</span>
+                            <span class="material-symbols-outlined text-lime-green">qr_code_2</span>
+                        </div>
+                        <div
+                            class="w-full aspect-square bg-surface-variant mb-base overflow-hidden border-2 border-charcoal">
+                            <img class="w-full h-full object-cover grayscale contrast-125"
+                                data-alt="A high-contrast editorial portrait of a creative professional in a minimalist studio setting. The lighting is sharp and dramatic, casting deep shadows across a pristine white background. The subject is wearing modern tech-wear, embodying a Neo-Cyber aesthetic. The overall mood is authoritative, clean, and forward-thinking, perfectly aligned with a professional design monograph style."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiorPQ-vI7N8munLunCSA9tlC7-lZlafNb-tJoyjAEWYuRtg3gtPSDKRRmapAjexd7FiS8GksG5kbpT8eXs50ZrmCVrqzT68o_jCKOvSsi_v22NnrTjWqxjaFGC0hhb51SO36hOkUjrbOB7qKY_qRhDJfDhhWeKzDW-GZ8OIR9u2sdODWBgPRegI-lncrNdJimfKkfVm7M8hUUOxvD0ZpnHRW0AfogYczL46O9g53A4gCEOrYICZqFftN4u6C4Tjz9_8OYzz47H0ht" />
+                        </div>
+                        <div class="space-y-1">
+                            <div class="font-label-caps text-label-caps text-outline">NAME</div>
+                            <div class="font-headline-md text-headline-md text-charcoal leading-none">SYSTEM_ERR</div>
+                            <div class="flex justify-between items-end mt-4">
+                                <div>
+                                    <div class="font-label-caps text-label-caps text-outline">CLASS</div>
+                                    <div class="font-label-mono text-label-mono text-electric-blue">ARCHITECT</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="font-label-caps text-label-caps text-outline">LEVEL</div>
+                                    <div class="font-label-mono text-label-mono">SR_DESIGNER</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Skills Section -->
+        <section class="bg-charcoal py-section-gap px-margin-mobile md:px-margin-desktop overflow-hidden">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-gutter md:mb-section-gap">
+                    <h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-pure-white leading-none">
+                        TECHNICAL <br />
+                        <span class="text-lime-green">ARSENAL</span>
+                    </h2>
+                </div>
+                <!-- Floating Signboards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+                    <!-- Skill Sign 1 -->
+                    <div class="relative group signboard-float">
+                        <div
+                            class="bg-electric-blue border-2 border-pure-white p-6 rotate-[-2deg] ortho-shadow-small hover:rotate-0 transition-transform cursor-default">
+                            <span class="font-label-mono text-label-mono text-lime-green">SKILL_01</span>
+                            <h3 class="font-headline-lg text-headline-lg text-pure-white mt-2">FULL STACK DEV</h3>
+                            <div class="mt-4 pt-4 border-t border-pure-white/20">
+                                <p class="font-label-caps text-label-caps text-pure-white/60">SYSTEMS / INFRASTRUCTURE /
+                                    SCALE</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Skill Sign 2 -->
+                    <div class="relative group signboard-float mt-8 md:mt-0">
+                        <div
+                            class="bg-pure-white border-2 border-charcoal p-6 rotate-[1deg] ortho-shadow-small hover:rotate-0 transition-transform cursor-default">
+                            <span class="font-label-mono text-label-mono text-electric-blue">SKILL_02</span>
+                            <h3 class="font-headline-lg text-headline-lg text-charcoal mt-2">REACT / NEXT.JS</h3>
+                            <div class="mt-4 pt-4 border-t border-charcoal/10">
+                                <p class="font-label-caps text-label-caps text-charcoal/60">COMPONENT_ARCHITECTURE / SPA
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Skill Sign 3 -->
+                    <div class="relative group signboard-float mt-8 lg:mt-0">
+                        <div
+                            class="bg-lime-green border-2 border-charcoal p-6 rotate-[-1deg] ortho-shadow-small hover:rotate-0 transition-transform cursor-default">
+                            <span class="font-label-mono text-label-mono text-charcoal">SKILL_03</span>
+                            <h3 class="font-headline-lg text-headline-lg text-charcoal mt-2">UI / UX</h3>
+                            <div class="mt-4 pt-4 border-t border-charcoal/20">
+                                <p class="font-label-caps text-label-caps text-charcoal/60">ACCESSIBILITY /
+                                    HIGH_FIDELITY</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Skill Sign 4 -->
+                    <div class="relative group signboard-float mt-8 lg:mt-4">
+                        <div
+                            class="bg-charcoal border-2 border-lime-green p-6 rotate-[2deg] ortho-shadow-small hover:rotate-0 transition-transform cursor-default">
+                            <span class="font-label-mono text-label-mono text-lime-green">SKILL_04</span>
+                            <h3 class="font-headline-lg text-headline-lg text-pure-white mt-2">NODE.JS</h3>
+                            <div class="mt-4 pt-4 border-t border-lime-green/20">
+                                <p class="font-label-caps text-label-caps text-pure-white/60">BACKEND / RUNTIME /
+                                    PERFORMANCE</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Skill Sign 5 -->
+                    <div class="relative group signboard-float mt-8 lg:mt-4">
+                        <div
+                            class="bg-pure-white border-2 border-electric-blue p-6 rotate-[-3deg] ortho-shadow-small hover:rotate-0 transition-transform cursor-default">
+                            <span class="font-label-mono text-label-mono text-electric-blue">SKILL_05</span>
+                            <h3 class="font-headline-lg text-headline-lg text-charcoal mt-2">AI TOOLS</h3>
+                            <div class="mt-4 pt-4 border-t border-electric-blue/20">
+                                <p class="font-label-caps text-label-caps text-charcoal/60">GENERATIVE_WORKFLOW /
+                                    AUTOMATION</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Aesthetic Filler -->
+                    <div class="hidden lg:flex items-center justify-center">
+                        <span
+                            class="material-symbols-outlined text-[120px] text-lime-green opacity-20 animate-pulse">architecture</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer
+            class="w-full px-margin-desktop py-gutter flex flex-col md:flex-row justify-between items-center bg-charcoal dark:bg-surface-container-lowest border-t-2 border-charcoal">
+            <div class="font-label-mono text-label-mono text-lime-green mb-4 md:mb-0">©2024 SYSTEM_ERR_DEV. ALL RIGHTS
+                RESERVED.</div>
+            <div class="flex gap-gutter">
+                <a class="font-label-mono text-label-mono text-pure-white opacity-60 hover:opacity-100 hover:text-lime-green transition-all duration-300 hover:tracking-widest"
+                    href="#">TERMINAL</a>
+                <a class="font-label-mono text-label-mono text-pure-white opacity-60 hover:opacity-100 hover:text-lime-green transition-all duration-300 hover:tracking-widest"
+                    href="#">SOURCE</a>
+                <a class="font-label-mono text-label-mono text-pure-white opacity-60 hover:opacity-100 hover:text-lime-green transition-all duration-300 hover:tracking-widest"
+                    href="#">CONNECT</a>
+            </div>
+        </footer>
+    </main>
+    <script>
+        // Micro-interaction for the signboard hover effect logic
+        document.querySelectorAll('.signboard-float').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) translateY(0)`;
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+<!-- Projects & Experience Section -->
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>PROJECTS &amp; EXPERIENCE | SYSTEM_ERR_DEV</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Inter:wght@400;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#dee0ff",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#bbc3ff",
+                        "charcoal": "#1A1A1A",
+                        "on-secondary-container": "#556a00",
+                        "on-surface-variant": "#444656",
+                        "tertiary": "#922a00",
+                        "on-tertiary-container": "#ffdfd5",
+                        "secondary": "#516600",
+                        "pure-white": "#FFFFFF",
+                        "surface-container-high": "#e8e8e8",
+                        "on-tertiary-fixed-variant": "#842500",
+                        "surface-dim": "#dadada",
+                        "background": "#f9f9f9",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#747688",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#303030",
+                        "tertiary-fixed": "#ffdbd0",
+                        "on-secondary-fixed-variant": "#3d4d00",
+                        "lime-green": "#D4FF3F",
+                        "inverse-primary": "#bbc3ff",
+                        "secondary-fixed": "#c8f232",
+                        "on-primary-fixed": "#000e5e",
+                        "electric-blue": "#304FFE",
+                        "surface-bright": "#f9f9f9",
+                        "on-tertiary-fixed": "#3a0b00",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#c5f02e",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#eeeeee",
+                        "surface": "#f9f9f9",
+                        "error": "#ba1a1a",
+                        "primary-container": "#304ffe",
+                        "on-primary-container": "#e2e3ff",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-tint": "#2345f6",
+                        "surface-variant": "#e2e2e2",
+                        "secondary-fixed-dim": "#add500",
+                        "on-primary-fixed-variant": "#002bcf",
+                        "tertiary-fixed-dim": "#ffb59e",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#171e00",
+                        "on-background": "#1b1b1b",
+                        "primary": "#0030e4",
+                        "tertiary-container": "#bb3800",
+                        "on-surface": "#1b1b1b",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container-low": "#f3f3f3",
+                        "outline-variant": "#c4c5d9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "section-gap": "120px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "label-mono": ["JetBrains Mono"],
+                        "display-lg": ["Syne"],
+                        "headline-lg": ["Syne"],
+                        "label-caps": ["Inter"],
+                        "display-lg-mobile": ["Syne"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Syne"]
+                    },
+                    "fontSize": {
+                        "label-mono": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg": ["80px", { "lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .ortho-float {
+            box-shadow: 12px 12px 0px 0px rgba(26, 26, 26, 1);
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .ortho-float:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 16px 16px 0px 0px rgba(48, 79, 254, 1);
+        }
+
+        .sticker-rotate {
+            transform: rotate(-2deg);
+        }
+
+        .sticker-rotate-alt {
+            transform: rotate(1.5deg);
+        }
+
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #304FFE;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s;
+        }
+
+        ::selection {
+            background-color: #D4FF3F;
+            color: #1A1A1A;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-pure-white text-charcoal selection:bg-lime-green">
+    <!-- Top Navigation -->
+    <header
+        class="bg-background dark:bg-charcoal text-electric-blue dark:text-inverse-primary font-headline-md text-headline-md tracking-tighter w-full top-0 sticky border-b-2 border-charcoal dark:border-outline z-50 flex justify-between items-center px-margin-desktop py-base w-full">
+        <div class="font-display-lg text-headline-md text-charcoal dark:text-pure-white uppercase">PORTFOLIO</div>
+        <nav class="hidden md:flex gap-gutter">
+            <a class="text-charcoal dark:text-pure-white hover:text-electric-blue transition-colors duration-200"
+                href="#">Index</a>
+            <a class="text-electric-blue font-bold hover:text-electric-blue transition-colors duration-200"
+                href="#">Projects</a>
+            <a class="text-charcoal dark:text-pure-white hover:text-electric-blue transition-colors duration-200"
+                href="#">Archive</a>
+            <a class="text-charcoal dark:text-pure-white hover:text-electric-blue transition-colors duration-200"
+                href="#">About</a>
+        </nav>
+        <button
+            class="bg-electric-blue text-pure-white px-gutter py-base font-label-caps active:translate-y-0.5 transition-transform">HIRE
+            ME</button>
+    </header>
+    <!-- Side Navigation Drawer (Hidden on mobile) -->
+    <aside
+        class="fixed left-0 top-0 h-full z-[100] flex flex-col p-8 bg-pure-white dark:bg-charcoal h-screen w-80 border-r-2 border-charcoal dark:border-outline shadow-[8px_8px_0px_0px_rgba(26,26,26,1)] hidden lg:flex">
+        <div class="font-display-lg text-headline-md text-charcoal mb-12 uppercase">NAVIGATION</div>
+        <ul class="space-y-6">
+            <li><a class="font-display-lg text-headline-lg-mobile text-charcoal hover:pl-4 transition-all duration-300 hover:text-electric-blue block"
+                    href="#">Index</a></li>
+            <li><a class="font-display-lg text-headline-lg-mobile text-electric-blue italic underline decoration-lime-green decoration-4 hover:pl-4 transition-all duration-300 block"
+                    href="#">Projects</a></li>
+            <li><a class="font-display-lg text-headline-lg-mobile text-charcoal hover:pl-4 transition-all duration-300 hover:text-electric-blue block"
+                    href="#">Archive</a></li>
+            <li><a class="font-display-lg text-headline-lg-mobile text-charcoal hover:pl-4 transition-all duration-300 hover:text-electric-blue block"
+                    href="#">Lab</a></li>
+            <li><a class="font-display-lg text-headline-lg-mobile text-charcoal hover:pl-4 transition-all duration-300 hover:text-electric-blue block"
+                    href="#">About</a></li>
+        </ul>
+    </aside>
+    <main class="lg:ml-80 min-h-screen">
+        <!-- Hero Section -->
+        <section class="px-margin-desktop py-section-gap">
+            <h1 class="font-display-lg text-display-lg uppercase max-w-4xl">
+                Creative <span class="text-electric-blue">Systems</span> &amp; Digital Narrative.
+            </h1>
+            <p class="font-body-lg text-body-lg mt-base max-w-xl opacity-70">
+                Bridging the gap between brutalist architecture and fluid digital experiences. Focused on Neo-Cyber
+                Editorial design for the next generation of web infrastructure.
+            </p>
+        </section>
+        <!-- Projects Bento Grid -->
+        <section class="px-margin-desktop mb-section-gap" id="projects">
+            <div class="flex items-end justify-between mb-gutter">
+                <h2 class="font-headline-lg text-headline-lg uppercase underline decoration-lime-green decoration-8">
+                    Selected Works</h2>
+                <span class="font-label-mono text-label-mono opacity-50">[VOL_01_2024]</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+                <!-- Project 1: Cyber-Reality Systems -->
+                <div class="md:col-span-8 group relative">
+                    <div class="ortho-float bg-surface-container overflow-hidden border-2 border-charcoal">
+                        <img class="w-full h-[500px] object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                            data-alt="A high-contrast digital art showcase featuring complex 3D wireframe structures of a futuristic city floating in a void. The color palette is dominated by deep blacks and pure whites with sharp neon electric blue highlights. The aesthetic is clean, technical, and reminiscent of high-end editorial graphic design. Lighting is dramatic and directional, casting hard orthographic shadows."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDReSlLMuTe3PvfheD5BhB5b8MJIxNVxP1v-_i-6pu9LAdYqJYtVFaf1z7O4Jwv89U7yrodlYdPyTacl-Is9ROUDZO9hX_Hafuy-psSaId3Pu5Kgx0MTrOSR2hCTjNr_km2DtLwcG3xAZxhWHAZ1tbo5bFky0JFVH2PbiLeKYbTGXNjjDfMzQ3kIijsm5-7JuiBu5gFYW2reA6iOg87wmoi7L7bSc2eOdISXMRwyTnFZdlEVMUbxOHeXXBaun0aY5AwiuMGP29qC13X" />
+                        <div class="p-gutter flex flex-col items-start bg-pure-white">
+                            <span
+                                class="sticker-rotate bg-lime-green text-charcoal px-4 py-1 font-label-mono text-label-mono mb-base border border-charcoal">VR/AR
+                                INFRASTRUCTURE</span>
+                            <h3 class="font-headline-md text-headline-md uppercase">Cyber-Reality Systems</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2: Kinetic Interface Lab -->
+                <div class="md:col-span-4 group">
+                    <div
+                        class="ortho-float bg-surface-container overflow-hidden border-2 border-charcoal h-full flex flex-col">
+                        <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                            data-alt="A macro photograph of a retro-futuristic mechanical keyboard with custom transparent keycaps glowing with soft lime green light. The background is a minimalist tech workspace with high-key lighting. The overall mood is precise and experimental, focusing on the tactile nature of high-end hardware design. Monochrome surroundings emphasize the glowing green accents."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD77g7eLg-rAhPyLEjnrswNJSbkq2TWZbSck04trD3E2b9uxip923K_uZr4HVGaH-8foUXGrd9UFluxe2jaFQrKBZQaESbbORAfg3C3AewKgYzN6awqxm3LpyrxFckjeVYJvLpOop7O3FRg-NqXvr50khTAOyqBOcAovKlBIN2sxmla0xVZAhlYpjd7spuivnM-WZQx3MvTDQ3Aqr3azlXYl9m5CGVnsPi4XKurOpEzdYvnjGm4YakeU67cThsmL8ylH25Qccf4ozLF" />
+                        <div class="p-gutter bg-pure-white border-t-2 border-charcoal">
+                            <span
+                                class="sticker-rotate-alt bg-electric-blue text-pure-white px-4 py-1 font-label-mono text-label-mono mb-base inline-block border border-charcoal">HCI
+                                RESEARCH</span>
+                            <h3 class="font-headline-md text-headline-md uppercase">Kinetic Interface Lab</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3: Neo-Dash -->
+                <div class="md:col-span-12 group">
+                    <div
+                        class="ortho-float bg-charcoal text-pure-white overflow-hidden border-2 border-charcoal flex flex-col md:flex-row">
+                        <div class="p-margin-desktop flex-1 flex flex-col justify-center">
+                            <span
+                                class="bg-lime-green text-charcoal px-4 py-1 font-label-mono text-label-mono mb-gutter w-fit border border-charcoal">DASHBOARD
+                                UI</span>
+                            <h3 class="font-display-lg text-headline-lg uppercase mb-base">Neo-Dash</h3>
+                            <p class="font-body-md text-body-md opacity-80 mb-gutter max-w-md">
+                                A high-performance telemetry dashboard for autonomous transport units, utilizing
+                                orthographic projection for data visualization.
+                            </p>
+                            <button
+                                class="border-2 border-pure-white px-8 py-3 w-fit font-label-caps hover:bg-pure-white hover:text-charcoal transition-all">VIEW
+                                CASE STUDY</button>
+                        </div>
+                        <div class="flex-1 min-h-[300px] relative overflow-hidden">
+                            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                                data-alt="A minimalist digital dashboard display showing abstract data visualizations with sharp, thin lines and geometric shapes. The UI uses a strictly monochrome theme with intense electric blue highlights for critical data points. The layout is asymmetrical and futuristic, set against a pristine light-mode background that gives it a professional editorial look."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFiQrfSaeEuOiTZ-eQFpUPvrGdxG0H5Qm9FlnwPCGvLetCI0VsfHE9GXujQiZWCJZFsioXY30gBH8pBRc_UmpPzqbvCL4WySZZwfp_XmtzEmP4Eu9oty6RDPOOn3IImQuxrWhfE2uyrjUAzDBbNdYOlkf-zXrsEtCZYLCO3JfsFOJK8O5McZCIGcOkwj08uIW3zpMmsxFHTnhcxHE94SAUlOjWgnnXHzIxpe-Mmq7OZ9PtW7MJxd2yzA9xSbEPCoEJxvquggm4dg64" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Experience/Education Section -->
+        <section class="px-margin-desktop mb-section-gap" id="experience">
+            <div class="flex flex-col md:flex-row gap-gutter">
+                <div class="md:w-1/3">
+                    <h2 class="font-display-lg text-headline-lg uppercase sticky top-32">Experience <br />&amp; Growth
+                    </h2>
+                </div>
+                <div class="md:w-2/3 space-y-gutter relative">
+                    <!-- Timeline Line -->
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-charcoal opacity-10 ml-4 md:ml-0"></div>
+                    <!-- Experience Item 1 -->
+                    <div class="relative pl-12 md:pl-16">
+                        <div
+                            class="absolute left-1.5 md:-left-2.5 top-0 w-6 h-6 bg-electric-blue border-4 border-pure-white rounded-full z-10">
+                        </div>
+                        <div class="ortho-float bg-pure-white border-2 border-charcoal p-gutter sticker-rotate-alt">
+                            <div class="flex justify-between items-start mb-base">
+                                <span class="font-label-mono text-label-mono text-electric-blue">2022 — PRESENT</span>
+                                <span class="material-symbols-outlined">terminal</span>
+                            </div>
+                            <h4 class="font-headline-md text-headline-md uppercase">Lead Interface Designer</h4>
+                            <p class="font-label-caps text-label-caps mb-gutter opacity-60">SPECTRA_CORE INDUSTRIES</p>
+                            <p class="font-body-md text-body-md">Architecting design systems for sub-surface logistics
+                                and autonomous monitoring. Leading a team of 12 creative developers.</p>
+                        </div>
+                    </div>
+                    <!-- Experience Item 2 -->
+                    <div class="relative pl-12 md:pl-16">
+                        <div
+                            class="absolute left-1.5 md:-left-2.5 top-0 w-6 h-6 bg-lime-green border-4 border-pure-white rounded-full z-10">
+                        </div>
+                        <div class="ortho-float bg-pure-white border-2 border-charcoal p-gutter sticker-rotate">
+                            <div class="flex justify-between items-start mb-base">
+                                <span class="font-label-mono text-label-mono text-electric-blue">2020 — 2022</span>
+                                <span class="material-symbols-outlined">architecture</span>
+                            </div>
+                            <h4 class="font-headline-md text-headline-md uppercase">Senior Creative Developer</h4>
+                            <p class="font-label-caps text-label-caps mb-gutter opacity-60">VOID_ARCHIVE SYSTEMS</p>
+                            <p class="font-body-md text-body-md">Developed generative branding tools and interactive
+                                editorial platforms for high-fashion clients.</p>
+                        </div>
+                    </div>
+                    <!-- Experience Item 3 -->
+                    <div class="relative pl-12 md:pl-16">
+                        <div
+                            class="absolute left-1.5 md:-left-2.5 top-0 w-6 h-6 bg-charcoal border-4 border-pure-white rounded-full z-10">
+                        </div>
+                        <div class="ortho-float bg-pure-white border-2 border-charcoal p-gutter">
+                            <div class="flex justify-between items-start mb-base">
+                                <span class="font-label-mono text-label-mono text-electric-blue">2018 — 2020</span>
+                                <span class="material-symbols-outlined">school</span>
+                            </div>
+                            <h4 class="font-headline-md text-headline-md uppercase">MFA in Computational Arts</h4>
+                            <p class="font-label-caps text-label-caps mb-gutter opacity-60">CYBER_UI INSTITUTE</p>
+                            <p class="font-body-md text-body-md">Researched the intersection of brutalist architecture
+                                and responsive digital typography systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact CTA / Floating Signboard -->
+        <section class="px-margin-desktop pb-section-gap flex justify-center">
+            <div
+                class="ortho-float bg-lime-green p-12 text-center border-2 border-charcoal max-w-2xl transform hover:scale-105 transition-transform">
+                <h3 class="font-display-lg text-headline-lg uppercase mb-gutter">Available for Collaboration</h3>
+                <p class="font-body-lg text-body-lg mb-gutter">Currently taking on high-end creative projects for Q3
+                    2024. Let's build the future of the web.</p>
+                <div class="flex flex-wrap justify-center gap-gutter">
+                    <button
+                        class="bg-charcoal text-pure-white px-gutter py-base font-label-caps hover:bg-electric-blue transition-colors">INITIATE
+                        CONTACT</button>
+                    <button
+                        class="border-2 border-charcoal px-gutter py-base font-label-caps hover:bg-charcoal hover:text-pure-white transition-all">VIEW
+                        CV.PDF</button>
+                </div>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer
+            class="bg-charcoal dark:bg-surface-container-lowest text-lime-green dark:text-secondary font-label-mono text-label-mono w-full px-margin-desktop py-gutter flex flex-col md:flex-row justify-between items-center border-t-2 border-charcoal bg-charcoal">
+            <div class="font-label-mono text-label-mono text-lime-green uppercase">©2024 SYSTEM_ERR_DEV. ALL RIGHTS
+                RESERVED.</div>
+            <div class="flex gap-gutter mt-base md:mt-0">
+                <a class="text-pure-white opacity-60 hover:opacity-100 hover:text-lime-green transition-opacity hover:tracking-widest transition-all duration-300"
+                    href="#">Terminal</a>
+                <a class="text-pure-white opacity-60 hover:opacity-100 hover:text-lime-green transition-opacity hover:tracking-widest transition-all duration-300"
+                    href="#">Source</a>
+                <a class="text-pure-white opacity-60 hover:opacity-100 hover:text-lime-green transition-opacity hover:tracking-widest transition-all duration-300"
+                    href="#">Connect</a>
+            </div>
+        </footer>
+    </main>
+    <div class="custom-cursor hidden md:block" id="cursor"></div>
+    <script>
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX - 10 + 'px';
+            cursor.style.top = e.clientY - 10 + 'px';
+        });
+
+        // Simple scroll reveal for cards
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.ortho-float').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
+
+<!-- Contact & Footer Section -->
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Inter:wght@400;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#dee0ff",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#bbc3ff",
+                        "charcoal": "#1A1A1A",
+                        "on-secondary-container": "#556a00",
+                        "on-surface-variant": "#444656",
+                        "tertiary": "#922a00",
+                        "on-tertiary-container": "#ffdfd5",
+                        "secondary": "#516600",
+                        "pure-white": "#FFFFFF",
+                        "surface-container-high": "#e8e8e8",
+                        "on-tertiary-fixed-variant": "#842500",
+                        "surface-dim": "#dadada",
+                        "background": "#f9f9f9",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#747688",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#303030",
+                        "tertiary-fixed": "#ffdbd0",
+                        "on-secondary-fixed-variant": "#3d4d00",
+                        "lime-green": "#D4FF3F",
+                        "inverse-primary": "#bbc3ff",
+                        "secondary-fixed": "#c8f232",
+                        "on-primary-fixed": "#000e5e",
+                        "electric-blue": "#304FFE",
+                        "surface-bright": "#f9f9f9",
+                        "on-tertiary-fixed": "#3a0b00",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#c5f02e",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#eeeeee",
+                        "surface": "#f9f9f9",
+                        "error": "#ba1a1a",
+                        "primary-container": "#304ffe",
+                        "on-primary-container": "#e2e3ff",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-tint": "#2345f6",
+                        "surface-variant": "#e2e2e2",
+                        "secondary-fixed-dim": "#add500",
+                        "on-primary-fixed-variant": "#002bcf",
+                        "tertiary-fixed-dim": "#ffb59e",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#171e00",
+                        "on-background": "#1b1b1b",
+                        "primary": "#0030e4",
+                        "tertiary-container": "#bb3800",
+                        "on-surface": "#1b1b1b",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container-low": "#f3f3f3",
+                        "outline-variant": "#c4c5d9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "section-gap": "120px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "label-mono": ["JetBrains Mono"],
+                        "display-lg": ["Syne"],
+                        "headline-lg": ["Syne"],
+                        "label-caps": ["Inter"],
+                        "display-lg-mobile": ["Syne"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Syne"]
+                    },
+                    "fontSize": {
+                        "label-mono": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg": ["80px", { "lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .magnetic-btn {
+            transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .sticker-rotate {
+            transform: rotate(-2deg);
+        }
+
+        .grid-bg {
+            background-image: linear-gradient(to right, rgba(26, 26, 26, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(26, 26, 26, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background text-on-background selection:bg-lime-green selection:text-charcoal font-body-md overflow-x-hidden">
+    <!-- Top Navigation Anchor -->
+    <nav
+        class="bg-background dark:bg-charcoal text-electric-blue dark:text-inverse-primary border-b-2 border-charcoal dark:border-outline w-full top-0 sticky flex justify-between items-center px-margin-desktop py-base w-full z-50">
+        <div class="font-display-lg text-headline-md text-charcoal dark:text-pure-white uppercase">PORTFOLIO</div>
+        <div class="hidden md:flex gap-gutter">
+            <a class="text-charcoal dark:text-pure-white hover:text-electric-blue transition-colors duration-200 font-label-caps"
+                href="#">PROJECTS</a>
+            <a class="text-charcoal dark:text-pure-white hover:text-electric-blue transition-colors duration-200 font-label-caps"
+                href="#">LAB</a>
+            <a class="text-charcoal dark:text-pure-white hover:text-electric-blue transition-colors duration-200 font-label-caps"
+                href="#">ABOUT</a>
+            <a class="text-electric-blue font-bold hover:text-electric-blue transition-colors duration-200 font-label-caps"
+                href="#">HIRE ME</a>
+        </div>
+        <button class="md:hidden">
+            <span class="material-symbols-outlined" data-icon="menu">menu</span>
+        </button>
+    </nav>
+    <main class="min-h-screen grid-bg">
+        <!-- Contact Section -->
+        <section
+            class="px-margin-desktop py-section-gap flex flex-col items-center justify-center text-center relative overflow-hidden">
+            <!-- Availability Sticker -->
+            <div class="mb-gutter sticker-rotate">
+                <span
+                    class="bg-lime-green text-charcoal px-4 py-2 font-label-mono text-label-mono shadow-[4px_4px_0px_0px_rgba(26,26,26,1)] uppercase">
+                    AVAILABLE_FOR_Q3_2024
+                </span>
+            </div>
+            <!-- Main Headline -->
+            <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg max-w-5xl mb-section-gap leading-none">
+                READY TO START A <span class="text-electric-blue italic">NEW CHAPTER?</span>
+            </h1>
+            <!-- Magnetic CTA Container -->
+            <div class="relative py-12 px-24 cursor-pointer group" id="magnetic-area">
+                <a class="magnetic-btn inline-flex items-center justify-center bg-electric-blue text-pure-white font-label-caps text-xl px-12 py-8 rounded-full shadow-[12px_12px_0px_0px_rgba(212,255,63,1)] group-hover:shadow-[16px_16px_0px_0px_rgba(212,255,63,1)] transition-all duration-300 transform active:scale-95"
+                    href="mailto:hello@system-err.dev">
+                    SAY HELLO
+                    <span class="material-symbols-outlined ml-4 font-bold"
+                        data-icon="arrow_outward">arrow_outward</span>
+                </a>
+            </div>
+            <!-- Editorial Decorative Image -->
+            <div class="absolute -bottom-20 -right-20 w-1/3 opacity-10 pointer-events-none select-none md:block hidden">
+                <img class="w-full grayscale contrast-125"
+                    data-alt="A highly detailed close-up of a high-tech robotic hand reaching towards a glowing digital interface in a pristine white minimalist laboratory. The lighting is cold and precise, casting sharp shadows that emphasize the 3D depth of the metallic components. Accents of lime green light pulse from the fingertips, contrasting against the dark charcoal base of the machinery. The overall mood is futuristic, professional, and sophisticated."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfRVlUueXxEh1B_9hRzyy_hxDwpQkRWCb_mJ-tKiAA-FUsTKf8RJpNGCKPz5NeaLWAp6EUVX7zvhOkTWRS-JTAUQP2ofEod2N_u3DzJoztD8y2uXH0hejxIKiJuFhUrErmuFYCG6BVC66P2YyAcsl9v62ZWPhpaBOS2QAN4uv0Z2lbjkMpvfInpFgqukSA-hfRqUnEZXTqPC0InqDCLnUY5L911PEqa0I7aZZuA7GPdyaWFbJKB9H-cftOWZxo2OHusIdDLkPk8p6O" />
+            </div>
+        </section>
+        <!-- Connectivity & Links Grid -->
+        <section class="px-margin-desktop pb-section-gap">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-end">
+                <div class="md:col-span-5">
+                    <p class="font-label-caps text-charcoal opacity-40 mb-4">SOCIAL CHANNELS</p>
+                    <ul class="flex flex-col gap-4">
+                        <li class="border-b-2 border-charcoal group">
+                            <a class="flex justify-between items-center py-4 font-headline-md text-headline-md hover:pl-4 transition-all duration-300"
+                                href="#">
+                                BEHANCE
+                                <span
+                                    class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-lime-green"
+                                    data-icon="north_east">north_east</span>
+                            </a>
+                        </li>
+                        <li class="border-b-2 border-charcoal group">
+                            <a class="flex justify-between items-center py-4 font-headline-md text-headline-md hover:pl-4 transition-all duration-300"
+                                href="#">
+                                LINKEDIN
+                                <span
+                                    class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-lime-green"
+                                    data-icon="north_east">north_east</span>
+                            </a>
+                        </li>
+                        <li class="border-b-2 border-charcoal group">
+                            <a class="flex justify-between items-center py-4 font-headline-md text-headline-md hover:pl-4 transition-all duration-300"
+                                href="#">
+                                DRIBBBLE
+                                <span
+                                    class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-lime-green"
+                                    data-icon="north_east">north_east</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2 hidden md:block">
+                    <!-- Vertical Spacer with minimal graphic -->
+                    <div class="h-64 w-[2px] bg-charcoal mx-auto"></div>
+                </div>
+                <div class="md:col-span-5 text-right flex flex-col items-end">
+                    <p class="font-label-caps text-charcoal opacity-40 mb-4">CURRENT LOCATION</p>
+                    <div
+                        class="w-full aspect-video bg-surface-container border-2 border-charcoal overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-500">
+                        <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+                            <div class="bg-electric-blue text-pure-white px-4 py-2 font-label-mono text-xs">EST_TIMEZONE
+                                / 52.5200° N, 13.4050° E</div>
+                        </div>
+                        <img class="w-full h-full object-cover opacity-60"
+                            data-alt="An abstract minimalist topographical map of a metropolitan city rendered in stark black and white lines. The map uses thick charcoal strokes for primary roads and fine electric blue lines for waterways. The aesthetic is clean, editorial, and highly stylized, reminiscent of a high-end graphic design publication. Soft diffused lighting creates a subtle depth across the 2D plane."
+                            data-location="Berlin"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIwZcjw9-5thvE0DqZL5BrBJjT_7JT9Th0tgh5AUo2G4yGIg_I2P6sfz6GEQRZxMnU04IWem-lfeyNbIYFbGHewBbPMqu2JUQ1s0YBtujiL__ovZ7hcedCGMhHEV2RlnCBbuL3bLOGnwxSlmReuPuD89guKJzkFp-XfyV9df6LDVEchZOxmP7tx2RhdGwS19mY1oOqS6BgeEYBNFGtOj0msFyRUhJZZFgQxj9uwb2_nkDkS0Jy2uAt5T8fE5YRlZwQw7xrBA69lxoi" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer Shell -->
+    <footer
+        class="bg-charcoal dark:bg-surface-container-lowest border-t-2 border-charcoal bg-charcoal w-full bottom-0 px-margin-desktop py-gutter flex flex-col md:flex-row justify-between items-center z-50">
+        <div class="font-label-mono text-label-mono text-lime-green uppercase tracking-tighter mb-4 md:mb-0">
+            ©2024 SYSTEM_ERR_DEV. ALL RIGHTS RESERVED.
+        </div>
+        <div class="flex gap-gutter">
+            <a class="text-pure-white opacity-60 font-label-mono text-label-mono hover:opacity-100 hover:text-lime-green hover:tracking-widest transition-all duration-300"
+                href="#">TERMINAL</a>
+            <a class="text-pure-white opacity-60 font-label-mono text-label-mono hover:opacity-100 hover:text-lime-green hover:tracking-widest transition-all duration-300"
+                href="#">SOURCE</a>
+            <a class="text-lime-green font-bold font-label-mono text-label-mono hover:tracking-widest transition-all duration-300"
+                href="#">CONNECT</a>
+        </div>
+    </footer>
+    <script>
+        // Magnetic Button Micro-interaction
+        const area = document.getElementById('magnetic-area');
+        const btn = area.querySelector('.magnetic-btn');
+
+        area.addEventListener('mousemove', (e) => {
+            const rect = area.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+        });
+
+        area.addEventListener('mouseleave', () => {
+            btn.style.transform = `translate(0px, 0px)`;
+        });
+
+        // Simple Fade-in Observer
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>
+
+<!-- Behance-Inspired Portfolio Concept -->
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CREATIVE_DEV | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Inter:wght@400;500;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#e2e2e2",
+                        "electric-blue": "#304FFE",
+                        "inverse-surface": "#303030",
+                        "on-primary-fixed-variant": "#002bcf",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb59e",
+                        "surface-dim": "#dadada",
+                        "surface-container-highest": "#e2e2e2",
+                        "primary": "#0030e4",
+                        "tertiary": "#922a00",
+                        "secondary-fixed-dim": "#add500",
+                        "on-tertiary-fixed-variant": "#842500",
+                        "on-secondary-fixed-variant": "#3d4d00",
+                        "primary-container": "#304ffe",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#ffdfd5",
+                        "primary-fixed": "#dee0ff",
+                        "tertiary-fixed": "#ffdbd0",
+                        "surface": "#f9f9f9",
+                        "charcoal": "#1A1A1A",
+                        "outline": "#747688",
+                        "on-tertiary-fixed": "#3a0b00",
+                        "secondary": "#516600",
+                        "surface-container": "#eeeeee",
+                        "surface-bright": "#f9f9f9",
+                        "secondary-fixed": "#c8f232",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#e8e8e8",
+                        "lime-green": "#D4FF3F",
+                        "on-secondary-fixed": "#171e00",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-tint": "#2345f6",
+                        "secondary-container": "#c5f02e",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f3f3f3",
+                        "on-primary-container": "#e2e3ff",
+                        "background": "#f9f9f9",
+                        "inverse-primary": "#bbc3ff",
+                        "on-background": "#1b1b1b",
+                        "outline-variant": "#c4c5d9",
+                        "on-surface": "#1b1b1b",
+                        "on-surface-variant": "#444656",
+                        "primary-fixed-dim": "#bbc3ff",
+                        "on-secondary-container": "#556a00",
+                        "pure-white": "#FFFFFF",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#000e5e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "section-gap": "120px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Syne"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-md": ["Syne"],
+                        "headline-lg": ["Syne"],
+                        "display-lg-mobile": ["Syne"],
+                        "label-mono": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["80px", { "lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-lg-mobile": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-mono": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .floating-signboard {
+            transform: perspective(1000px) rotateY(-15deg) rotateX(5deg);
+            transition: all 0.5s ease-out;
+        }
+
+        .floating-signboard:hover {
+            transform: perspective(1000px) rotateY(-5deg) rotateX(2deg) translateY(-10px);
+            box-shadow: 20px 20px 0px 0px rgba(48, 79, 254, 0.1);
+        }
+
+        .text-outline {
+            -webkit-text-stroke: 1px currentColor;
+            color: transparent;
+        }
+
+        .mask-gradient {
+            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+    <!-- TopAppBar -->
+    <header
+        class="fixed top-0 w-full z-50 border-b-2 border-charcoal bg-surface/80 backdrop-blur-md flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4">
+        <div class="font-display-lg text-headline-md tracking-tighter text-on-surface">
+            CREATIVE_DEV
+        </div>
+        <nav class="hidden md:flex gap-gutter items-center">
+            <a class="font-label-caps text-label-caps text-electric-blue font-bold hover:text-electric-blue transition-colors"
+                href="#intro">Intro</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-electric-blue transition-colors"
+                href="#projects">Projects</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-electric-blue transition-colors"
+                href="#abilities">Abilities</a>
+            <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-electric-blue transition-colors"
+                href="#connect">Connect</a>
+        </nav>
+        <button
+            class="bg-electric-blue text-on-primary font-label-caps text-label-caps px-6 py-3 hover:scale-95 duration-150 transition-all uppercase tracking-widest">
+            HIRE ME
+        </button>
+    </header>
+    <!-- NavigationDrawer (Sidebar Desktop Overlay) -->
+    <aside
+        class="hidden fixed right-0 h-full w-80 border-l-2 border-charcoal bg-surface z-40 flex flex-col p-gutter gap-base shadow-[12px_12px_0px_0px_rgba(48,79,254,1)] translate-x-full transition-transform duration-500 pt-32"
+        id="nav-drawer">
+        <div class="font-display-lg text-headline-lg text-on-surface mb-base">INDEX</div>
+        <div class="flex flex-col gap-4">
+            <a class="text-on-primary bg-electric-blue px-4 py-2 italic font-label-caps text-label-caps flex items-center gap-2"
+                href="#intro">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">north_east</span>
+                Intro
+            </a>
+            <a class="text-on-surface px-4 py-2 hover:italic font-label-caps text-label-caps flex items-center gap-2 hover:bg-surface-container-highest transition-all"
+                href="#projects">
+                <span class="material-symbols-outlined">grid_view</span> Projects
+            </a>
+            <a class="text-on-surface px-4 py-2 hover:italic font-label-caps text-label-caps flex items-center gap-2 hover:bg-surface-container-highest transition-all"
+                href="#abilities">
+                <span class="material-symbols-outlined">layers</span> Abilities
+            </a>
+            <a class="text-on-surface px-4 py-2 hover:italic font-label-caps text-label-caps flex items-center gap-2 hover:bg-surface-container-highest transition-all"
+                href="#history">
+                <span class="material-symbols-outlined">timeline</span> History
+            </a>
+            <a class="text-on-surface px-4 py-2 hover:italic font-label-caps text-label-caps flex items-center gap-2 hover:bg-surface-container-highest transition-all"
+                href="#connect">
+                <span class="material-symbols-outlined">mail</span> Connect
+            </a>
+        </div>
+    </aside>
+    <main class="relative">
+        <!-- Hero Section -->
+        <section
+            class="min-h-screen pt-32 px-margin-mobile md:px-margin-desktop flex flex-col items-center justify-center relative overflow-hidden"
+            id="intro">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 opacity-10">
+                <h1 class="font-display-lg text-[240px] md:text-[400px] leading-none select-none">PORTFOLIO</h1>
+            </div>
+            <div class="w-full max-w-6xl relative z-10 flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-2/3 floating-signboard">
+                    <img alt="Portfolio 3D Signboard" class="w-full h-auto drop-shadow-2xl"
+                        src="https://lh3.googleusercontent.com/aida/ADBb0uglGPltix2kdC2NZ2XrngvUlud-Ro8y4kt9mjPN81BXufhYS1u4949q1V-HStj_o-dgbRYYUMljQzqbjpR1olkrutXLFKkhXVmWC7stqI5y3jBsIiVEabMaVHwtemULAQZtTU5ErT1d1f6Wtr7GZBaKIzEscJbmTkn0OH0nGU77ZZ9gAmTRVu7aAB7y6B423Y6pgBGQzlQVD4a4v49OCzog9_Cwfg-H0d7XOKCAGGCn9nKwOf9ixGNGuPNW" />
+                </div>
+                <div class="w-full md:w-1/3 space-y-base flex flex-col items-start">
+                    <div class="bg-lime-green px-4 py-1 font-label-mono text-label-mono rotate-[-2deg] mb-4">
+                        CREATIVE_DEV_v2.0</div>
+                    <h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-charcoal">CRAFTING DIGITAL
+                        MONOGRAPHS</h2>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-sm">
+                        An interdisciplinary approach to web development, mixing high-end art direction with rigid
+                        technical architectures.
+                    </p>
+                    <div class="flex gap-4 pt-6">
+                        <div
+                            class="w-12 h-12 rounded-full border-2 border-charcoal flex items-center justify-center hover:bg-charcoal hover:text-pure-white transition-all cursor-pointer">
+                            <span class="material-symbols-outlined">arrow_downward</span>
+                        </div>
+                        <div class="font-label-caps text-label-caps flex flex-col justify-center">
+                            <span>EXPLORE_ARCHIVE</span>
+                            <span class="text-electric-blue">SCROLL_DOWN</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Section (Editorial) -->
+        <section class="py-section-gap px-margin-mobile md:px-margin-desktop">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+                <div class="md:col-span-4 border-l-2 border-charcoal pl-6">
+                    <span
+                        class="font-label-caps text-label-caps text-outline text-charcoal block mb-4 uppercase">Identity</span>
+                    <h3 class="font-headline-lg text-headline-lg mb-gutter">BEYOND THE GRID.</h3>
+                </div>
+                <div class="md:col-span-7 md:col-start-6">
+                    <p class="font-body-lg text-body-lg text-charcoal leading-relaxed mb-base">
+                        My practice is rooted in the belief that digital spaces should be as expressive as physical
+                        galleries. I don't just build websites; I curate experiences that challenge the status quo of
+                        standard UI kits.
+                    </p>
+                    <p class="font-body-md text-body-md text-on-surface-variant italic">
+                        "Precision meets poetry in the pursuit of the perfect pixel."
+                    </p>
+                    <div class="mt-margin-mobile flex flex-wrap gap-4">
+                        <span
+                            class="inline-block bg-surface-container-highest px-3 py-1 font-label-mono text-label-mono border border-outline-variant rotate-[1deg]">#FrontendExpert</span>
+                        <span
+                            class="inline-block bg-surface-container-highest px-3 py-1 font-label-mono text-label-mono border border-outline-variant rotate-[-1.5deg]">#UIMonolith</span>
+                        <span
+                            class="inline-block bg-surface-container-highest px-3 py-1 font-label-mono text-label-mono border border-outline-variant rotate-[0.5deg]">#3DVisuals</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Skills Section (3D Sign Panels) -->
+        <section class="py-section-gap bg-charcoal text-pure-white px-margin-mobile md:px-margin-desktop"
+            id="abilities">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-margin-desktop gap-8">
+                <div>
+                    <h2 class="font-display-lg text-display-lg-mobile md:text-display-lg">ABILITIES</h2>
+                    <p class="font-label-mono text-label-mono text-lime-green">STACK_OVERVIEW_2024</p>
+                </div>
+                <div class="max-w-md text-right">
+                    <p class="font-body-md text-body-md text-surface-variant">A curated selection of tools and
+                        technologies leveraged to build high-performance, aesthetically dominant digital experiences.
+                    </p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+                <!-- Skill Card 1 -->
+                <div
+                    class="relative group h-80 border-2 border-outline/30 p-gutter hover:border-lime-green transition-colors duration-500 overflow-hidden flex flex-col justify-between">
+                    <div class="font-label-mono text-label-mono text-lime-green">01 // ARCHITECTURE</div>
+                    <div>
+                        <h4 class="font-headline-md text-headline-md mb-2">React &amp; Next.js</h4>
+                        <p class="font-body-md text-body-md text-outline">Building performant, SEO-optimized application
+                            cores with a focus on seamless transitions.</p>
+                    </div>
+                    <div
+                        class="absolute -bottom-10 -right-10 text-[120px] font-display-lg text-outline opacity-10 group-hover:text-lime-green group-hover:opacity-20 transition-all">
+                        R</div>
+                </div>
+                <!-- Skill Card 2 -->
+                <div
+                    class="relative group h-80 border-2 border-outline/30 p-gutter hover:border-lime-green transition-colors duration-500 overflow-hidden flex flex-col justify-between">
+                    <div class="font-label-mono text-label-mono text-lime-green">02 // SYSTEMS</div>
+                    <div>
+                        <h4 class="font-headline-md text-headline-md mb-2">Node &amp; GraphQL</h4>
+                        <p class="font-body-md text-body-md text-outline">Reliable backend infrastructures designed for
+                            scale and ultra-low latency data fetching.</p>
+                    </div>
+                    <div
+                        class="absolute -bottom-10 -right-10 text-[120px] font-display-lg text-outline opacity-10 group-hover:text-lime-green group-hover:opacity-20 transition-all">
+                        S</div>
+                </div>
+                <!-- Skill Card 3 -->
+                <div
+                    class="relative group h-80 border-2 border-outline/30 p-gutter hover:border-lime-green transition-colors duration-500 overflow-hidden flex flex-col justify-between">
+                    <div class="font-label-mono text-label-mono text-lime-green">03 // VISUALS</div>
+                    <div>
+                        <h4 class="font-headline-md text-headline-md mb-2">UI/UX Strategy</h4>
+                        <p class="font-body-md text-body-md text-outline">Conceptual art direction translated into
+                            functional, user-centric interfaces.</p>
+                    </div>
+                    <div
+                        class="absolute -bottom-10 -right-10 text-[120px] font-display-lg text-outline opacity-10 group-hover:text-lime-green group-hover:opacity-20 transition-all">
+                        V</div>
+                </div>
+                <!-- Skill Card 4 -->
+                <div
+                    class="relative group h-80 border-2 border-outline/30 p-gutter hover:border-lime-green transition-colors duration-500 overflow-hidden flex flex-col justify-between">
+                    <div class="font-label-mono text-label-mono text-lime-green">04 // INTELLIGENCE</div>
+                    <div>
+                        <h4 class="font-headline-md text-headline-md mb-2">AI Integration</h4>
+                        <p class="font-body-md text-body-md text-outline">Implementing generative AI and ML models to
+                            create predictive, adaptive user experiences.</p>
+                    </div>
+                    <div
+                        class="absolute -bottom-10 -right-10 text-[120px] font-display-lg text-outline opacity-10 group-hover:text-lime-green group-hover:opacity-20 transition-all">
+                        A</div>
+                </div>
+            </div>
+        </section>
+        <!-- Projects Section (Bento Grid) -->
+        <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface" id="projects">
+            <div class="mb-margin-desktop flex flex-col md:flex-row items-baseline gap-4">
+                <h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-charcoal">SELECTED_WORKS</h2>
+                <span class="font-label-mono text-label-mono text-electric-blue">[VIEW_ALL_08]</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter auto-rows-[300px] md:auto-rows-[400px]">
+                <!-- Bento Item 1 -->
+                <div class="md:col-span-8 md:row-span-2 relative group overflow-hidden border-2 border-charcoal">
+                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        data-alt="A high-fidelity minimalist website design featuring abstract 3D glass shapes on a pure white background with sharp charcoal typography. The aesthetic is clean, professional, and sophisticated, emphasizing extreme whitespace and high-contrast lime green accents. Soft ambient studio lighting illuminates the 3D objects creating delicate shadows."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQiWXq1VgulS-nw7vvAsyxGGXwYKqIai7aoXzKuFuauGXHIH4CpTvRr7oxwyZLZWv1-XpEpvslRqcddirwU1CG3jgNhzAZSEq6CL7Sc0tS3PAbeaPwn7KnkPL0uTiPGqlxLkflzcSmh3BAtxlLl9y9pDr-u3tG9DLIeZFLeX7vSXRFMhWAwWgMo-OwY9NO0Quw-KTZpIE0x9sWQP7oaC7al5v7dwzYLErNlbLfbDXiEHnfhgDCzXcomZabWFRKDjT9I2OlpF0h49Lu" />
+                    <div
+                        class="absolute inset-0 bg-charcoal/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-gutter">
+                        <div
+                            class="bg-lime-green p-gutter max-w-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            <h5 class="font-headline-md text-headline-md text-charcoal">QUANTUM DASHBOARD</h5>
+                            <p class="font-label-mono text-label-mono text-charcoal/70 mb-4">REACT // WEBGL // THREE.JS
+                            </p>
+                            <button
+                                class="font-label-caps text-label-caps bg-charcoal text-pure-white px-4 py-2 flex items-center gap-2">CASE
+                                STUDY <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bento Item 2 -->
+                <div class="md:col-span-4 md:row-span-1 relative group overflow-hidden border-2 border-charcoal">
+                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        data-alt="A professional close-up of a high-tech laboratory setting with blue and green lighting. Minimalist electronic equipment is arranged with architectural precision. The mood is futuristic and technical, using a palette of electric blue and charcoal. High-key light hits sleek metallic surfaces creating a sharp, digital vibe."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBPgQlO55KT7npfUSWsOtC4BSjj-uvVP7eC4weLuMugIzxPa4r9EpdQUaIhvawMbEkMnMX5kSkXeqKj1g2PaFH5vYtXthlvdVwNeRcexP0V4-uENJGCwOANwoUYknJhynO3hah4CxpP45nUDBV2jvsiVNA5EuECa09pVU64jPhZd5W3MQlMFFfAN0be_4RIYymMWgLOv_ZDkL-6Wu6hJ2-3fbj9X-h3-MuM4W5i1PxdBtUB4bS3Kg_UyY5VzYrWOVOCYvYPDqc5PFD" />
+                    <div class="absolute top-4 right-4">
+                        <span
+                            class="bg-electric-blue text-pure-white px-2 py-1 font-label-mono text-label-mono">AI_TOOLS</span>
+                    </div>
+                </div>
+                <!-- Bento Item 3 -->
+                <div class="md:col-span-4 md:row-span-1 relative group overflow-hidden border-2 border-charcoal">
+                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        data-alt="Modern geometric mobile app interface design shown on a high-end smartphone. The screen displays complex data visualizations using a vibrant lime green and electric blue color scheme on a dark charcoal background. The surrounding environment is a minimalist, bright white studio setting. Professional lighting creates soft, realistic shadows."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC521Pw1cQIlT41tv86ZUw2zGbbU_U0iK3OL3VHRAzMpEKeRId_cUbDuoyBVyYDZS8-HZiqw2K0ATEDYQNCt-oW3xtlgI-J8BIOANmLV8J6UvCj8sqXCXv9p4IcKHRSlMcxMQFgbBkOEolfEGRoTd5cDqR_uffyJdr8Gv-s9DPvwAjqKI9bSQ0JLZdBA9MZULpJI8LPtXF-448OSA9LhRfgemFcnhFTNtvP3eKQEQLL-OXwMkquC_IcVzYQhHrdui80uOM0rV1pGVGs" />
+                    <div class="absolute bottom-4 left-4">
+                        <h6 class="font-headline-md text-headline-md text-charcoal bg-pure-white px-3 py-1">MOBILE_OS
+                        </h6>
+                    </div>
+                </div>
+                <!-- Bento Item 4 -->
+                <div
+                    class="md:col-span-12 md:row-span-1 relative group overflow-hidden border-2 border-charcoal flex flex-col md:flex-row bg-white">
+                    <div class="md:w-1/2 p-gutter flex flex-col justify-center bg-lime-green">
+                        <span class="font-label-mono text-label-mono text-charcoal uppercase mb-2">Internal
+                            Project</span>
+                        <h5 class="font-display-lg text-[40px] text-charcoal mb-4">NEO_DASH_2024</h5>
+                        <p class="font-body-md text-charcoal/80 mb-6 max-w-md">Developing an internal toolset for rapid
+                            prototyping of 3D-integrated user interfaces for automotive sectors.</p>
+                        <button
+                            class="w-fit bg-charcoal text-pure-white px-8 py-3 font-label-caps text-label-caps hover:bg-electric-blue transition-colors">EXPLORE
+                            PLATFORM</button>
+                    </div>
+                    <div class="md:w-1/2 bg-charcoal overflow-hidden flex items-center justify-center">
+                        <div
+                            class="w-64 h-64 border-4 border-lime-green rounded-full animate-pulse flex items-center justify-center">
+                            <span class="material-symbols-outlined text-lime-green text-[120px]">blur_on</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA Section -->
+        <section
+            class="py-section-gap px-margin-mobile md:px-margin-desktop bg-electric-blue text-pure-white overflow-hidden relative"
+            id="connect">
+            <div class="absolute top-0 right-0 p-gutter">
+                <span class="material-symbols-outlined text-[200px] opacity-10 rotate-12">send</span>
+            </div>
+            <div class="max-w-4xl relative z-10">
+                <h2 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-gutter">READY TO START A NEW
+                    CHAPTER?</h2>
+                <p class="font-body-lg text-body-lg mb-margin-desktop opacity-90 max-w-2xl">
+                    I am currently accepting select commissions for Q3 2024. Whether it's a full-scale product launch or
+                    a creative art direction, let's build something authoritative.
+                </p>
+                <div class="flex flex-wrap gap-gutter">
+                    <a class="bg-pure-white text-electric-blue px-12 py-5 font-headline-md text-headline-md hover:bg-lime-green hover:text-charcoal transition-all duration-300"
+                        href="mailto:hello@creative-dev.com">
+                        SAY HELLO
+                    </a>
+                    <div
+                        class="flex items-center gap-6 font-label-mono text-label-mono border-l border-pure-white/30 pl-6">
+                        <div class="flex flex-col">
+                            <span>AVAILABILITY</span>
+                            <span class="text-lime-green">AVAILABLE_NOW</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span>LOCATION</span>
+                            <span>GLOBAL_REMOTE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="w-full border-t-2 border-charcoal bg-charcoal flex flex-col md:flex-row justify-between items-center px-margin-desktop py-base text-pure-white">
+        <div class="font-label-mono text-label-mono uppercase mb-4 md:mb-0">
+            © 2024 DESIGNED_BY_CODE
+        </div>
+        <div class="flex gap-gutter">
+            <a class="font-label-mono text-label-mono text-surface-variant hover:text-electric-blue transition-all"
+                href="#">Archive</a>
+            <a class="font-label-mono text-label-mono text-surface-variant hover:text-electric-blue transition-all"
+                href="#">Behance</a>
+            <a class="font-label-mono text-label-mono text-surface-variant hover:text-electric-blue transition-all"
+                href="#">Source</a>
+            <a class="font-label-mono text-label-mono text-lime-green underline" href="#">Status</a>
+        </div>
+    </footer>
+    <!-- FAB -->
+    <button
+        class="fixed bottom-margin-mobile right-margin-mobile bg-lime-green text-charcoal p-4 shadow-[4px_4px_0px_0px_rgba(26,26,26,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_rgba(26,26,26,1)] transition-all z-50"
+        id="fab">
+        <span class="material-symbols-outlined text-[32px]">menu</span>
+    </button>
+    <script>
+        // Simple Navigation Drawer Toggle
+        const fab = document.getElementById('fab');
+        const drawer = document.getElementById('nav-drawer');
+        let isOpen = false;
+
+        fab.addEventListener('click', () => {
+            isOpen = !isOpen;
+            if (isOpen) {
+                drawer.classList.remove('translate-x-full');
+                fab.querySelector('span').textContent = 'close';
+            } else {
+                drawer.classList.add('translate-x-full');
+                fab.querySelector('span').textContent = 'menu';
+            }
+        });
+
+        // Close drawer on link click
+        drawer.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                drawer.classList.add('translate-x-full');
+                fab.querySelector('span').textContent = 'menu';
+                isOpen = false;
+            });
+        });
+
+        // Intersection Observer for active nav state
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    const navLinks = document.querySelectorAll('nav a, #nav-drawer a');
+
+                    navLinks.forEach(link => {
+                        const href = link.getAttribute('href').substring(1);
+                        if (href === id) {
+                            link.classList.add('text-electric-blue', 'font-bold');
+                            link.classList.remove('text-on-surface-variant');
+                        } else {
+                            link.classList.remove('text-electric-blue', 'font-bold');
+                            if (!link.closest('#nav-drawer')) {
+                                link.classList.add('text-on-surface-variant');
+                            }
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section[id]').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

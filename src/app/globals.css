@@ -1,26 +1,223 @@
 @import "tailwindcss";
 
+@theme {
+  --color-electric-blue: #304FFE;
+  --color-lime-green: #D4FF3F;
+  --color-charcoal: #1A1A1A;
+  --color-soft-white: #F8F9FA;
+  --color-light-gray: #EAEAEA;
+  
+  --font-syne: var(--font-syne), sans-serif;
+  --font-inter: var(--font-inter), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
+  
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-slow: float 8s ease-in-out infinite;
+  --animate-float-fast: float 4s ease-in-out infinite;
+  --animate-spin-slow: spin 20s linear infinite;
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8f9fa;
+  --foreground: #1a1a1a;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --background: #0d0d0d;
+  --foreground: #f8f9fa;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Utilities for Neo-Brutalism & Editorial Styling */
+
+/* Orthogonal/Hard Shadows */
+.brutalist-shadow {
+  box-shadow: 8px 8px 0px 0px #1A1A1A;
+  transition: all 0.2s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.brutalist-shadow:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 10px 10px 0px 0px #1A1A1A;
+}
+
+.brutalist-shadow-blue {
+  box-shadow: 8px 8px 0px 0px #304FFE;
+  transition: all 0.2s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.brutalist-shadow-blue:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 10px 10px 0px 0px #304FFE;
+}
+
+.brutalist-shadow-lime {
+  box-shadow: 8px 8px 0px 0px #D4FF3F;
+  transition: all 0.2s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.brutalist-shadow-lime:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 10px 10px 0px 0px #D4FF3F;
+}
+
+/* 3D Perspective Card (Concept 1) */
+.floating-signboard {
+  transform: perspective(1000px) rotateY(-12deg) rotateX(4deg);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.floating-signboard:hover {
+  transform: perspective(1000px) rotateY(-4deg) rotateX(1deg) translateY(-8px);
+  box-shadow: 16px 16px 0px 0px rgba(48, 79, 254, 0.15);
+}
+
+/* Text Stroke effect */
+.text-stroke {
+  -webkit-text-stroke: 1.5px var(--foreground);
+  color: transparent;
+}
+
+.text-stroke-blue {
+  -webkit-text-stroke: 1.5px #304FFE;
+  color: transparent;
+}
+
+/* Lanyard rope pattern */
+.lanyard-cable {
+  width: 4px;
+  background: repeating-linear-gradient(
+    0deg,
+    #1A1A1A,
+    #1A1A1A 12px,
+    #304FFE 12px,
+    #304FFE 24px
+  );
+}
+
+.lanyard-cable-lime {
+  width: 4px;
+  background: repeating-linear-gradient(
+    0deg,
+    #1A1A1A,
+    #1A1A1A 12px,
+    #D4FF3F 12px,
+    #D4FF3F 24px
+  );
+}
+
+/* Poster Tape style (Concept 2/4) */
+.tape-top {
+  position: relative;
+}
+.tape-top::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 20%;
+  width: 80px;
+  height: 24px;
+  background-color: rgba(212, 255, 63, 0.7);
+  transform: rotate(-3deg);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  border-left: 2px dashed rgba(26, 26, 26, 0.2);
+  border-right: 2px dashed rgba(26, 26, 26, 0.2);
+  z-index: 10;
+}
+
+.tape-corner {
+  position: relative;
+}
+.tape-corner::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 60px;
+  height: 20px;
+  background-color: rgba(48, 79, 254, 0.6);
+  transform: rotate(40deg);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+}
+
+/* Subtle dot overlay background */
+.dot-bg {
+  background-image: radial-gradient(rgba(26, 26, 26, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.dark .dot-bg {
+  background-image: radial-gradient(rgba(248, 249, 250, 0.08) 1px, transparent 1px);
+}
+
+/* Grid lines background (Concept 3) */
+.grid-lines-bg {
+  background-image: 
+    linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.dark .grid-lines-bg {
+  background-image: 
+    linear-gradient(to right, rgba(248, 249, 250, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(248, 249, 250, 0.04) 1px, transparent 1px);
+}
+
+/* Subtle grain noise overlay */
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Floating animation */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1.5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Custom circular/rotating text badge */
+.rotating-badge {
+  animation: spin 15s linear infinite;
+}
+
+/* Custom interactive scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+  border-left: 2px solid #1A1A1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #304FFE;
+  border: 2px solid #1A1A1A;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4FF3F;
 }
