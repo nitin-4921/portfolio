@@ -1,16 +1,19 @@
 @import "tailwindcss";
 
+/* Force Tailwind v4 to use class-based dark mode instead of media query */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-electric-blue: #304FFE;
   --color-lime-green: #D4FF3F;
   --color-charcoal: #1A1A1A;
   --color-soft-white: #F8F9FA;
   --color-light-gray: #EAEAEA;
-  
+
   --font-syne: var(--font-syne), sans-serif;
   --font-inter: var(--font-inter), sans-serif;
   --font-mono: var(--font-jetbrains-mono), monospace;
-  
+
   --animate-float: float 6s ease-in-out infinite;
   --animate-float-slow: float 8s ease-in-out infinite;
   --animate-float-fast: float 4s ease-in-out infinite;
@@ -22,11 +25,14 @@
 :root {
   --background: #f8f9fa;
   --foreground: #1a1a1a;
+  color-scheme: light;
 }
 
+/* Only go dark when .dark class is explicitly set — ignore system preference */
 .dark {
   --background: #0d0d0d;
   --foreground: #f8f9fa;
+  color-scheme: dark;
 }
 
 body {
@@ -94,30 +100,27 @@ body {
 /* Lanyard rope pattern */
 .lanyard-cable {
   width: 4px;
-  background: repeating-linear-gradient(
-    0deg,
-    #1A1A1A,
-    #1A1A1A 12px,
-    #304FFE 12px,
-    #304FFE 24px
-  );
+  background: repeating-linear-gradient(0deg,
+      #1A1A1A,
+      #1A1A1A 12px,
+      #304FFE 12px,
+      #304FFE 24px);
 }
 
 .lanyard-cable-lime {
   width: 4px;
-  background: repeating-linear-gradient(
-    0deg,
-    #1A1A1A,
-    #1A1A1A 12px,
-    #D4FF3F 12px,
-    #D4FF3F 24px
-  );
+  background: repeating-linear-gradient(0deg,
+      #1A1A1A,
+      #1A1A1A 12px,
+      #D4FF3F 12px,
+      #D4FF3F 24px);
 }
 
 /* Poster Tape style (Concept 2/4) */
 .tape-top {
   position: relative;
 }
+
 .tape-top::before {
   content: "";
   position: absolute;
@@ -136,6 +139,7 @@ body {
 .tape-corner {
   position: relative;
 }
+
 .tape-corner::before {
   content: "";
   position: absolute;
@@ -161,14 +165,14 @@ body {
 
 /* Grid lines background (Concept 3) */
 .grid-lines-bg {
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
 .dark .grid-lines-bg {
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(248, 249, 250, 0.04) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(248, 249, 250, 0.04) 1px, transparent 1px);
 }
@@ -188,19 +192,91 @@ body {
 
 /* Floating animation */
 @keyframes float {
-  0% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-10px) rotate(1.5deg); }
-  100% { transform: translateY(0px) rotate(0deg); }
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(1.5deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* Custom circular/rotating text badge */
 .rotating-badge {
   animation: spin 15s linear infinite;
+}
+
+/* Scanline sweep animation */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+/* Pulse ring */
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* Glitch shift */
+@keyframes glitch {
+  0%, 100% { clip-path: inset(0 0 100% 0); transform: translateX(0); }
+  10% { clip-path: inset(10% 0 60% 0); transform: translateX(-4px); }
+  20% { clip-path: inset(40% 0 30% 0); transform: translateX(4px); }
+  30% { clip-path: inset(70% 0 10% 0); transform: translateX(-2px); }
+  40% { clip-path: inset(0 0 100% 0); transform: translateX(0); }
+}
+
+/* Data flow line */
+@keyframes data-flow {
+  0% { stroke-dashoffset: 200; opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+/* Waveform pulse */
+@keyframes waveform {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+
+/* Blink cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Rotate slow */
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Counter-rotate */
+@keyframes rotate-ccw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+/* Heatmap pulse */
+@keyframes heatmap-pulse {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.35; }
 }
 
 /* Custom interactive scrollbar */
