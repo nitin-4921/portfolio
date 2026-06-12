@@ -1,7 +1,9 @@
-﻿"use client";
+"use client";
 
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import gsap from "gsap";
+import BootSequence from "@/components/BootSequence";
 
 interface IconProps {
   className?: string;
@@ -80,6 +82,10 @@ export default function Home() {
   const [cursorHovered, setCursorHovered] = useState(false);
   const [cursorText, setCursorText] = useState("");
   const [heroMouseOffset, setHeroMouseOffset] = useState({ x: 0, y: 0 });
+  const [booted, setBooted] = useState(false);
+
+  // GSAP cursor refs
+  const cursorRef = useRef<HTMLDivElement>(null);
 
   // SYSTEM_EVOLUTION Graph State
   const [activeNodeId, setActiveNodeId] = useState<string>("NITIN_KUMAR");
@@ -560,14 +566,55 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
-      const offsetX = (e.clientX - window.innerWidth / 2) / 25;
-      const offsetY = (e.clientY - window.innerHeight / 2) / 25;
-      setHeroMouseOffset({ x: offsetX, y: offsetY });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    // GSAP cursor tracking
+    const cursor = cursorRef.current;
+    if (cursor) {
+      const xTo = gsap.quickTo(cursor, "x", { duration: 0.2, ease: "power3" });
+      const yTo = gsap.quickTo(cursor, "y", { duration: 0.2, ease: "power3" });
+
+      const handleMouseMove = (e: MouseEvent) => {
+        xTo(e.clientX);
+        yTo(e.clientY);
+        setMousePos({ x: e.clientX, y: e.clientY });
+        const offsetX = (e.clientX - window.innerWidth / 2) / 25;
+        const offsetY = (e.clientY - window.innerHeight / 2) / 25;
+        setHeroMouseOffset({ x: offsetX, y: offsetY });
+      };
+      
+      const handleMouseDown = () => {
+        gsap.to(cursor, { scale: 0.8, duration: 0.1 });
+      };
+
+      const handleMouseUp = () => {
+        gsap.to(cursor, { scale: 1, duration: 0.1, ease: "elastic.out(1, 0.3)" });
+        // Ripple effect
+        const ripple = document.createElement("div");
+        ripple.className = "fixed pointer-events-none rounded-full border border-lime-green bg-lime-green/20 z-[9998] translate-x-[-50%] translate-y-[-50%]";
+        ripple.style.left = `${cursor.getBoundingClientRect().x + cursor.offsetWidth/2}px`;
+        ripple.style.top = `${cursor.getBoundingClientRect().y + cursor.offsetHeight/2}px`;
+        ripple.style.width = "40px";
+        ripple.style.height = "40px";
+        document.body.appendChild(ripple);
+        
+        gsap.to(ripple, {
+          width: 150,
+          height: 150,
+          opacity: 0,
+          duration: 0.6,
+          ease: "power2.out",
+          onComplete: () => ripple.remove()
+        });
+      };
+
+      window.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("mousedown", handleMouseDown);
+      window.addEventListener("mouseup", handleMouseUp);
+      return () => {
+        window.removeEventListener("mousemove", handleMouseMove);
+        window.removeEventListener("mousedown", handleMouseDown);
+        window.removeEventListener("mouseup", handleMouseUp);
+      };
+    }
   }, []);
 
   const handleMouseEnter = (text: string = "") => {
@@ -609,6 +656,7 @@ export default function Home() {
       size: "large",
       accent: "rgba(212,255,63,0.15)",
       bgPattern: "crowd",
+      image: "/projects/project-1.png",
     },
     {
       id: "02",
@@ -623,6 +671,7 @@ export default function Home() {
       size: "wide",
       accent: "rgba(48,79,254,0.15)",
       bgPattern: "road",
+      image: "/projects/project-2.png",
     },
     {
       id: "03",
@@ -637,6 +686,7 @@ export default function Home() {
       size: "medium",
       accent: "rgba(212,255,63,0.12)",
       bgPattern: "face",
+      image: "/projects/project-3.png",
     },
     {
       id: "04",
@@ -651,6 +701,7 @@ export default function Home() {
       size: "medium",
       accent: "rgba(48,79,254,0.12)",
       bgPattern: "devops",
+      image: "/projects/project-4.png",
     },
   ];
 
@@ -679,21 +730,31 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-soft-white dark:bg-[#050508] text-charcoal dark:text-soft-white font-sans selection:bg-lime-green selection:text-charcoal dot-bg">
-
-      {/* Custom Cursor */}
-      <div
-        className={`hidden md:block fixed pointer-events-none z-[9999] rounded-full border-2 border-charcoal mix-blend-difference transition-all duration-75 ease-out ${
-          cursorHovered ? "w-24 h-24 bg-lime-green/20 border-lime-green scale-110" : "w-6 h-6 bg-transparent"
-        }`}
-        style={{ left: `${mousePos.x}px`, top: `${mousePos.y}px`, transform: "translate(-50%, -50%)" }}
+    <>
+      <AnimatePresence>
+        {!booted && <BootSequence onComplete={() => setBooted(true)} />}
+      </AnimatePresence>
+      <motion.div 
+        className="min-h-screen flex flex-col bg-soft-white dark:bg-[#050508] text-charcoal dark:text-soft-white font-sans selection:bg-lime-green selection:text-charcoal dot-bg"
+        initial={{ opacity: 0, filter: "blur(10px)" }}
+        animate={booted ? { opacity: 1, filter: "blur(0px)" } : {}}
+        transition={{ duration: 1.5, ease: "circOut" }}
       >
-        {cursorHovered && cursorText && (
-          <div className="w-full h-full flex items-center justify-center text-[10px] font-bold font-mono tracking-tighter text-lime-green uppercase select-none text-center px-1">
-            {cursorText}
-          </div>
-        )}
-      </div>
+
+        {/* Custom Cursor */}
+        <div
+          ref={cursorRef}
+          className={`hidden md:flex fixed pointer-events-none z-[9999] rounded-full border-2 mix-blend-difference transform -translate-x-1/2 -translate-y-1/2 items-center justify-center transition-colors shadow-[0_0_10px_rgba(212,255,63,0.5)] ${
+            cursorHovered ? "w-24 h-24 bg-lime-green/20 border-lime-green" : "w-6 h-6 border-lime-green"
+          }`}
+          style={{ left: 0, top: 0 }}
+        >
+          {cursorHovered && cursorText && (
+            <div className="w-full h-full flex items-center justify-center text-[10px] font-bold font-mono tracking-tighter text-lime-green uppercase select-none text-center px-1">
+              {cursorText}
+            </div>
+          )}
+        </div>
 
       {/* Header */}
       <header className="fixed top-0 w-full z-40 px-4 md:px-12 py-4 flex justify-between items-center border-b-2 border-charcoal dark:border-white/10 bg-soft-white/80 dark:bg-[#050508]/80 backdrop-blur-md">
@@ -734,9 +795,10 @@ export default function Home() {
 
       <main className="flex-1 flex flex-col pt-24 pb-16">
         <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
+          initial={{ opacity: 0, filter: "blur(20px)", y: 40 }}
+          whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1.2, ease: "circOut", delay: 1 }}
           className="w-full flex flex-col"
         >
 
@@ -1062,8 +1124,18 @@ export default function Home() {
                         }}
                       />
 
-                      {/* SVG pattern background */}
-                      {bgPatterns[proj.bgPattern]}
+                      {/* SVG pattern or Image background */}
+                      {proj.image ? (
+                        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                          <img 
+                            src={proj.image} 
+                            alt={proj.title} 
+                            className="w-full h-full object-cover opacity-20 group-hover:opacity-60 transition-opacity duration-500 scale-105 group-hover:scale-100 mix-blend-luminosity group-hover:mix-blend-normal" 
+                          />
+                        </div>
+                      ) : (
+                        bgPatterns[proj.bgPattern]
+                      )}
 
                       {/* Scanline overlay */}
                       <div className="absolute inset-0 pointer-events-none opacity-[0.03]"
@@ -1806,7 +1878,7 @@ export default function Home() {
         </div>
       </footer>
 
-    </div>
+    </motion.div>
+    </>
   );
 }
-

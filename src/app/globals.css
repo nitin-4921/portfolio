@@ -42,6 +42,13 @@ body {
   overflow-x: hidden;
 }
 
+/* Hide default cursor on desktop where custom cursor is active */
+@media (min-width: 768px) {
+  * {
+    cursor: none !important;
+  }
+}
+
 /* Custom Utilities for Neo-Brutalism & Editorial Styling */
 
 /* Orthogonal/Hard Shadows */

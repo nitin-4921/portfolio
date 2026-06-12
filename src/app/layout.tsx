@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Syne, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/SmoothScroll";
+import CustomCursor from "@/components/CustomCursor";
+import MouseLight from "@/components/MouseLight";
 
 const syneFont = Syne({
   variable: "--font-syne",
@@ -36,9 +39,13 @@ export default function RootLayout({
       className={`${syneFont.variable} ${interFont.variable} ${jetbrainsMonoFont.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col relative">
-        {/* Subtle physical paper grain effect overlay */}
-        <div className="grain-overlay" />
-        {children}
+        <SmoothScroll>
+          <MouseLight />
+          <CustomCursor />
+          {/* Subtle physical paper grain effect overlay */}
+          <div className="grain-overlay" />
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );
