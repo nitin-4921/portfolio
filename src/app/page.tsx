@@ -1047,13 +1047,13 @@ export default function Home() {
                     crowd: (
                       <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
                         <defs>
-                          <radialGradient id="hm1" cx="30%" cy="40%"><stop offset="0%" stopColor="#D4FF3F" stopOpacity="0.8"/><stop offset="100%" stopColor="#D4FF3F" stopOpacity="0"/></radialGradient>
-                          <radialGradient id="hm2" cx="70%" cy="60%"><stop offset="0%" stopColor="#304FFE" stopOpacity="0.6"/><stop offset="100%" stopColor="#304FFE" stopOpacity="0"/></radialGradient>
-                          <radialGradient id="hm3" cx="50%" cy="30%"><stop offset="0%" stopColor="#FF4444" stopOpacity="0.5"/><stop offset="100%" stopColor="#FF4444" stopOpacity="0"/></radialGradient>
+                          <radialGradient id={`hm1-${proj.id}`} cx="30%" cy="40%"><stop offset="0%" stopColor="#D4FF3F" stopOpacity="0.8"/><stop offset="100%" stopColor="#D4FF3F" stopOpacity="0"/></radialGradient>
+                          <radialGradient id={`hm2-${proj.id}`} cx="70%" cy="60%"><stop offset="0%" stopColor="#304FFE" stopOpacity="0.6"/><stop offset="100%" stopColor="#304FFE" stopOpacity="0"/></radialGradient>
+                          <radialGradient id={`hm3-${proj.id}`} cx="50%" cy="30%"><stop offset="0%" stopColor="#FF4444" stopOpacity="0.5"/><stop offset="100%" stopColor="#FF4444" stopOpacity="0"/></radialGradient>
                         </defs>
-                        <rect width="400" height="400" fill="url(#hm1)"/>
-                        <rect width="400" height="400" fill="url(#hm2)"/>
-                        <rect width="400" height="400" fill="url(#hm3)"/>
+                        <rect width="400" height="400" fill={`url(#hm1-${proj.id})`}/>
+                        <rect width="400" height="400" fill={`url(#hm2-${proj.id})`}/>
+                        <rect width="400" height="400" fill={`url(#hm3-${proj.id})`}/>
                         {[...Array(12)].map((_, i) => (
                           <circle key={i} cx={30 + (i % 4) * 110} cy={40 + Math.floor(i / 4) * 120} r={3 + (i % 3) * 2} fill="#D4FF3F" opacity={0.4 + (i % 3) * 0.2}/>
                         ))}
@@ -1065,13 +1065,13 @@ export default function Home() {
                     road: (
                       <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 800 200" preserveAspectRatio="xMidYMid slice">
                         <defs>
-                          <radialGradient id="rd1" cx="20%" cy="50%"><stop offset="0%" stopColor="#FF6B00" stopOpacity="0.7"/><stop offset="100%" stopColor="#FF6B00" stopOpacity="0"/></radialGradient>
-                          <radialGradient id="rd2" cx="55%" cy="50%"><stop offset="0%" stopColor="#304FFE" stopOpacity="0.5"/><stop offset="100%" stopColor="#304FFE" stopOpacity="0"/></radialGradient>
-                          <radialGradient id="rd3" cx="80%" cy="50%"><stop offset="0%" stopColor="#D4FF3F" stopOpacity="0.6"/><stop offset="100%" stopColor="#D4FF3F" stopOpacity="0"/></radialGradient>
+                          <radialGradient id={`rd1-${proj.id}`} cx="20%" cy="50%"><stop offset="0%" stopColor="#FF6B00" stopOpacity="0.7"/><stop offset="100%" stopColor="#FF6B00" stopOpacity="0"/></radialGradient>
+                          <radialGradient id={`rd2-${proj.id}`} cx="55%" cy="50%"><stop offset="0%" stopColor="#304FFE" stopOpacity="0.5"/><stop offset="100%" stopColor="#304FFE" stopOpacity="0"/></radialGradient>
+                          <radialGradient id={`rd3-${proj.id}`} cx="80%" cy="50%"><stop offset="0%" stopColor="#D4FF3F" stopOpacity="0.6"/><stop offset="100%" stopColor="#D4FF3F" stopOpacity="0"/></radialGradient>
                         </defs>
-                        <rect width="800" height="200" fill="url(#rd1)"/>
-                        <rect width="800" height="200" fill="url(#rd2)"/>
-                        <rect width="800" height="200" fill="url(#rd3)"/>
+                        <rect width="800" height="200" fill={`url(#rd1-${proj.id})`}/>
+                        <rect width="800" height="200" fill={`url(#rd2-${proj.id})`}/>
+                        <rect width="800" height="200" fill={`url(#rd3-${proj.id})`}/>
                         {[...Array(20)].map((_, i) => (
                           <rect key={i} x={i * 42} y={85 + (i % 3) * 10} width="8" height="8" fill={i % 3 === 0 ? "#FF6B00" : i % 3 === 1 ? "#304FFE" : "#D4FF3F"} opacity="0.6" rx="1"/>
                         ))}
@@ -1111,112 +1111,137 @@ export default function Home() {
                     <div
                       key={proj.id}
                       className={`${gridSpan} group relative overflow-hidden border border-soft-white/10 bg-zinc-950 cursor-pointer
-                        hover:border-lime-green transition-all duration-500`}
+                        hover:border-lime-green transition-all duration-500 flex flex-col md:flex-row`}
                       style={{ boxShadow: `0 0 0 0 ${proj.accent}` }}
                       onMouseEnter={() => handleMouseEnter(proj.label)}
                       onMouseLeave={handleMouseLeave}
                     >
-                      {/* Blueprint grid texture */}
-                      <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-                        style={{
-                          backgroundImage: "linear-gradient(to right, #D4FF3F 1px, transparent 1px), linear-gradient(to bottom, #D4FF3F 1px, transparent 1px)",
-                          backgroundSize: "20px 20px"
-                        }}
-                      />
+                      {/* IMAGE AREA */}
+                      <div className={`relative w-full shrink-0 h-64 md:h-full overflow-hidden ${
+                        proj.size === "large" ? "md:w-[60%]" : "md:w-[70%]"
+                      }`}>
+                        {/* Blueprint grid texture */}
+                        <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                          style={{
+                            backgroundImage: "linear-gradient(to right, #D4FF3F 1px, transparent 1px), linear-gradient(to bottom, #D4FF3F 1px, transparent 1px)",
+                            backgroundSize: "20px 20px"
+                          }}
+                        />
 
-                      {/* SVG pattern or Image background */}
-                      {proj.image ? (
+                        {/* SVG pattern or Image background */}
                         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                          <img 
-                            src={proj.image} 
-                            alt={proj.title} 
-                            className="w-full h-full object-cover opacity-20 group-hover:opacity-60 transition-opacity duration-500 scale-105 group-hover:scale-100 mix-blend-luminosity group-hover:mix-blend-normal" 
-                          />
+                          {proj.image ? (
+                            <img 
+                              src={proj.image} 
+                              alt={proj.title} 
+                              className="w-full h-full object-cover opacity-50 group-hover:opacity-90 transition-all duration-700 ease-out scale-105 group-hover:scale-100 mix-blend-luminosity group-hover:mix-blend-normal" 
+                            />
+                          ) : (
+                            bgPatterns[proj.bgPattern]
+                          )}
                         </div>
-                      ) : (
-                        bgPatterns[proj.bgPattern]
-                      )}
 
-                      {/* Scanline overlay */}
-                      <div className="absolute inset-0 pointer-events-none opacity-[0.03]"
-                        style={{
-                          backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(212,255,63,0.5) 2px, rgba(212,255,63,0.5) 3px)",
-                        }}
-                      />
+                        {/* Scanline overlay */}
+                        <div className="absolute inset-0 pointer-events-none opacity-[0.03]"
+                          style={{
+                            backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(212,255,63,0.5) 2px, rgba(212,255,63,0.5) 3px)",
+                          }}
+                        />
 
-                      {/* Accent glow on hover */}
-                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                        style={{ background: `radial-gradient(ellipse at 50% 100%, ${proj.accent}, transparent 70%)` }}
-                      />
+                        {/* Image Protection Layer (Fix 04) */}
+                        <div className="absolute inset-0 pointer-events-none bg-gradient-to-t md:bg-gradient-to-r from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500 z-10" />
 
-                      {/* Top bar â€” system header */}
-                      <div className="absolute top-0 left-0 right-0 z-20 flex justify-between items-center px-4 py-2 border-b border-soft-white/10 bg-black/40 backdrop-blur-sm">
-                        <div className="flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-lime-green animate-pulse"></span>
-                          <span className="font-mono text-[9px] text-lime-green uppercase tracking-widest">{proj.label}</span>
+                        {/* Top bar — system header */}
+                        <div className="absolute top-0 left-0 right-0 z-20 flex justify-between items-center px-4 py-3 border-b border-soft-white/10 bg-black/40 backdrop-blur-md">
+                          <div className="flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-lime-green animate-pulse"></span>
+                            <span className="font-mono text-[9px] text-lime-green uppercase tracking-widest">{proj.label}</span>
+                          </div>
+                          <div className="flex items-center gap-3 font-mono text-[9px] text-soft-white/30">
+                            <span>SYS_{proj.id}</span>
+                            <span className="text-lime-green">{proj.year}</span>
+                          </div>
                         </div>
-                        <div className="flex items-center gap-3 font-mono text-[9px] text-soft-white/30">
-                          <span>SYS_{proj.id}</span>
-                          <span className="text-lime-green">{proj.year}</span>
+
+                        {/* Corner index */}
+                        <div className="absolute bottom-4 left-4 z-20 font-mono text-[60px] md:text-[80px] font-black text-soft-white/5 group-hover:text-soft-white/10 transition-colors leading-none select-none">
+                          {proj.id}
                         </div>
                       </div>
 
-                      {/* Main content area */}
-                      <div className="absolute inset-0 flex flex-col justify-end p-5 pt-10 z-10">
+                      {/* INFORMATION PANEL (Fix 01 & Fix 02) */}
+                      <div className={`relative w-full shrink-0 flex flex-col p-6 md:p-8 z-20 bg-zinc-950 border-t md:border-t-0 md:border-l border-soft-white/10 ${
+                        proj.size === "large" ? "md:w-[40%]" : "md:w-[30%]"
+                      }`}>
+                        
+                        {/* Accent glow on hover */}
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                          style={{ background: `radial-gradient(circle at center, ${proj.accent}, transparent 100%)` }}
+                        />
 
-                        {/* Stats row â€” always visible */}
-                        <div className="flex flex-wrap gap-2 mb-3 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
-                          <span className="font-mono text-[8px] border border-lime-green/30 text-lime-green px-2 py-0.5 uppercase bg-black/40">
-                            ACC: {proj.stats.accuracy}
-                          </span>
-                          <span className="font-mono text-[8px] border border-electric-blue/30 text-electric-blue px-2 py-0.5 uppercase bg-black/40">
-                            {proj.stats.fps}
-                          </span>
-                          <span className="font-mono text-[8px] border border-soft-white/20 text-soft-white/50 px-2 py-0.5 uppercase bg-black/40">
-                            LAT: {proj.stats.latency}
-                          </span>
-                          <span className={`font-mono text-[8px] px-2 py-0.5 uppercase bg-black/40 border ${
-                            proj.stats.status === "ACTIVE" ? "border-lime-green/50 text-lime-green" :
-                            proj.stats.status === "DEPLOYED" ? "border-electric-blue/50 text-electric-blue" :
-                            "border-soft-white/20 text-soft-white/50"
-                          }`}>
-                            â— {proj.stats.status}
-                          </span>
-                        </div>
-
-                        {/* Title block */}
-                        <div className="mb-3">
-                          <h3 className="font-syne font-black text-xl md:text-2xl text-soft-white uppercase tracking-tighter leading-none mb-1 group-hover:text-lime-green transition-colors duration-300">
+                        {/* Always visible title block */}
+                        <div className="relative z-10 mb-4 shrink-0">
+                          <h3 className="font-syne font-black text-2xl md:text-3xl text-soft-white uppercase tracking-tighter leading-none mb-2 group-hover:text-lime-green transition-colors duration-300">
                             {proj.title}
                           </h3>
-                          <p className="font-mono text-[10px] text-soft-white/40 uppercase tracking-wider">{proj.subtitle}</p>
+                          <p className="font-mono text-[10px] text-soft-white/50 uppercase tracking-wider">{proj.subtitle}</p>
                         </div>
 
-                        {/* Hover reveal panel */}
-                        <div className="max-h-0 overflow-hidden group-hover:max-h-64 transition-all duration-500 ease-in-out">
-                          <div className="border-t border-soft-white/10 pt-3 mt-1">
-                            <p className="font-sans text-xs text-soft-white/70 leading-relaxed mb-3">{proj.desc}</p>
-                            <div className="flex flex-wrap gap-1.5 mb-4">
-                              {proj.tags.map((tag, i) => (
-                                <span key={i} className="font-mono text-[8px] border border-soft-white/15 text-soft-white/40 px-2 py-0.5 uppercase">
+                        {/* Hover Reveal Panel (Fix 07) */}
+                        <div className="relative z-10 flex flex-col flex-1 justify-end transition-all duration-500 ease-out md:transform md:translate-y-8 md:opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+                          
+                          {/* Tech Stack (Tags) Fix 08 */}
+                          <div className="flex flex-wrap gap-1.5 mb-4">
+                            {proj.tags.map((tag, i) => {
+                              const isDesktopVisible = i < 4;
+                              const isMobileVisible = i < 2;
+                              return (
+                                <span key={i} className={`font-mono text-[8px] border border-soft-white/15 text-soft-white/70 px-2 py-0.5 uppercase ${
+                                  !isDesktopVisible ? "hidden" : "hidden md:inline-block"
+                                } ${
+                                  isMobileVisible ? "inline-block" : ""
+                                }`}>
                                   {tag}
                                 </span>
-                              ))}
+                              )
+                            })}
+                            {proj.tags.length > 4 && (
+                              <span className="font-mono text-[8px] border border-soft-white/15 bg-white/5 text-soft-white/90 px-2 py-0.5 uppercase hidden md:inline-block">
+                                +{proj.tags.length - 4} MORE
+                              </span>
+                            )}
+                            {proj.tags.length > 2 && (
+                              <span className="font-mono text-[8px] border border-soft-white/15 bg-white/5 text-soft-white/90 px-2 py-0.5 uppercase md:hidden inline-block">
+                                +{proj.tags.length - 2} MORE
+                              </span>
+                            )}
+                          </div>
+
+                          {/* Short Description (Fix 03) */}
+                          <p className="font-sans text-xs text-soft-white/70 leading-relaxed mb-6 line-clamp-2 md:line-clamp-3">
+                            {proj.desc}
+                          </p>
+
+                          {/* Action Area */}
+                          <div className="mt-auto pt-4 border-t border-soft-white/10 flex justify-between items-center shrink-0">
+                            <div className="flex gap-2">
+                               <span className={`font-mono text-[8px] uppercase px-2 py-1 border ${
+                                 proj.stats.status === "ACTIVE" ? "border-lime-green/30 text-lime-green bg-lime-green/5" :
+                                 proj.stats.status === "DEPLOYED" ? "border-electric-blue/30 text-electric-blue bg-electric-blue/5" :
+                                 "border-soft-white/20 text-soft-white/50 bg-white/5"
+                               }`}>
+                                 ● {proj.stats.status}
+                               </span>
                             </div>
                             <a
                               href={proj.url}
-                              className="inline-flex items-center gap-2 font-mono text-[10px] font-bold text-lime-green border border-lime-green/40 px-4 py-2 hover:bg-lime-green hover:text-charcoal transition-all duration-200 uppercase tracking-wider"
+                              className="inline-flex items-center gap-2 font-mono text-[10px] font-bold text-zinc-950 bg-lime-green px-4 py-2 hover:bg-white transition-all duration-200 uppercase tracking-wider shadow-[2px_2px_0px_0px_rgba(255,255,255,0.2)] hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.4)]"
                             >
                               OPEN_CASE_FILE <ArrowUpRight className="w-3 h-3" />
                             </a>
                           </div>
+
                         </div>
-
-                      </div>
-
-                      {/* Corner index */}
-                      <div className="absolute bottom-4 right-4 z-20 font-mono text-[40px] font-black text-soft-white/5 group-hover:text-soft-white/10 transition-colors leading-none select-none">
-                        {proj.id}
                       </div>
 
                     </div>
