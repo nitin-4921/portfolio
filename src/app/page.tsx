@@ -1075,7 +1075,7 @@ export default function Home() {
                         </div>
                       </div>
                       {/* Center: Heatmap viz */}
-                      <div className="lg:col-span-3 relative h-56 border border-lime-green/15 bg-black overflow-hidden group-hover:border-lime-green/40 transition-colors">
+                      <div className="lg:col-span-3 relative h-36 border border-lime-green/15 bg-black overflow-hidden group-hover:border-lime-green/40 transition-colors self-end mt-auto">
                         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 300 220" preserveAspectRatio="xMidYMid slice">
                           <defs>
                             <radialGradient id="c1" cx="25%" cy="35%"><stop offset="0%" stopColor="#D4FF3F" stopOpacity="0.7"/><stop offset="100%" stopColor="#D4FF3F" stopOpacity="0"/></radialGradient>
