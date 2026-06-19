@@ -1061,10 +1061,10 @@ export default function Home() {
                     {/* Body */}
                     <div className="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-6">
                       {/* Left: Title + desc */}
-                      <div className="lg:col-span-5 flex flex-col justify-between gap-4">
+                      <div className="lg:col-span-6 flex flex-col justify-between gap-4">
                         <div>
                           <div className="font-mono text-[9px] text-white/30 uppercase tracking-widest mb-2">PROJECT_01 // FLAGSHIP</div>
-                          <h3 className="font-syne font-black text-4xl md:text-6xl text-white uppercase leading-none tracking-tighter mb-1">TEERTH<span className="text-lime-green">FLOW</span></h3>
+                          <h3 className="font-syne font-black text-4xl md:text-5xl text-white uppercase leading-none tracking-tighter mb-1">TEERTH<span className="text-lime-green">FLOW</span></h3>
                           <p className="font-mono text-[10px] text-lime-green/70 mb-4">Deep Learning Crowd Management for Mass Gatherings</p>
                           <p className="font-sans text-sm text-white/65 leading-relaxed">CNN-based crowd density estimation trained on 10,000+ annotated images. Spatiotemporal LSTM forecasting predicts crowd surges 10–15 min ahead. Real-time heatmap dashboard via WebSocket at 24 FPS on edge hardware.</p>
                         </div>
@@ -1075,7 +1075,7 @@ export default function Home() {
                         </div>
                       </div>
                       {/* Center: Heatmap viz */}
-                      <div className="lg:col-span-4 relative h-56 border border-lime-green/15 bg-black overflow-hidden group-hover:border-lime-green/40 transition-colors">
+                      <div className="lg:col-span-3 relative h-56 border border-lime-green/15 bg-black overflow-hidden group-hover:border-lime-green/40 transition-colors">
                         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 300 220" preserveAspectRatio="xMidYMid slice">
                           <defs>
                             <radialGradient id="c1" cx="25%" cy="35%"><stop offset="0%" stopColor="#D4FF3F" stopOpacity="0.7"/><stop offset="100%" stopColor="#D4FF3F" stopOpacity="0"/></radialGradient>
